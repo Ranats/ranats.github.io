@@ -4,10 +4,30 @@ layout: default
 
 <div id="main_content_wrap" class="outer">
     <section id="main_content" class="inner">
-        <li>
-            <span class="post-meta">{{ page.date | date: "%b %-d, %Y" }}</span>
-            <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-            {{ content }}
-        </li>
+        <ol>
+            <h2 class="post-title" itemprop="name headline">{{ page.title }}</h2>
+            <span class="post-meta"style="margin-left: 0.5em">{{ page.date | date: "%b %-d, %Y" }}</span>
+            <div style="border: ridge;padding: 1em;margin-bottom: 2em">
+                {{ content }}
+            </div>
+        
+        
+        <hr>
+        
+        <nav style="margin-bottom: 3em;">
+            <div align="right" style="float:left;margin: auto auto">
+            {% if page.next %}
+                Next<br>
+            &lt;&lt; <a href="{{ page.next.url }}">{{ page.next.title }}</a>
+            {% endif %}
+            </div>
+            <div align="left" style="float:right;margin: auto auto">
+            {% if page.previous %}
+                Previous<br>
+            <a href="{{ page.previous.url }}">{{ page.previous.title }}</a> &gt;&gt;
+            {% endif %}
+            </div>
+        </nav></ol>
+        <div style="clear:both"></div>
     </section>
 </div>
