@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Rubyで引数をまとめる
+title: 引数をまとめて渡す | Ruby
 tag: Algorithm
 ---
 
@@ -66,8 +66,6 @@ head.product(*array)
 
 
 #### 参考
-- Ruby関数の引数を配列でまとめて渡す。 - それマグで！  
-[http://takuya-1st.hatenablog.jp/entry/2014/02/24/174150](http://takuya-1st.hatenablog.jp/entry/2014/02/24/174150)
 - ここまで出来る！RubyのSplat Operatorまとめ - RailsとRubyとVimのブログ
 [http://alpaca.tc/blog/ruby/how-to-use-star.html](http://alpaca.tc/blog/ruby/how-to-use-star.html)
 - splat での Array 式展開 - Qiita

@@ -120,10 +120,10 @@ a {
 
 a:hover, a:focus {color: #4874e9;}
 
-li a{
+.post-content a{
   color: #4874e9;
 }
-li a:hover, a:focus{
+.post-content a:hover, a:focus{
   text-decoration: underline;
 }
 
