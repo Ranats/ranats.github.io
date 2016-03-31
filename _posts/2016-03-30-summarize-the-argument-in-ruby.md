@@ -22,7 +22,7 @@ tag: Algorithm
 
 入力の数が3つ、とかの時に
 
-```ruby:sample.rb
+```ruby
 requests = ["foo","bar","baz"]
 array = []
 requests.each do |request|
@@ -47,7 +47,7 @@ array[0].product(array[1],array[2])
 
 ということで最初のコードを書き直してみる。
 
-```ruby:sample.rb
+```ruby
 requests = ["foo","bar","baz", ... ]
 array = []
 requests.each do |request|
@@ -66,7 +66,7 @@ head.product(*array)
 
 
 #### 参考
-- Ruby関数の引数を配列でまとめて渡す。 - それマグで！
+- Ruby関数の引数を配列でまとめて渡す。 - それマグで！  
 [http://takuya-1st.hatenablog.jp/entry/2014/02/24/174150](http://takuya-1st.hatenablog.jp/entry/2014/02/24/174150)
 - ここまで出来る！RubyのSplat Operatorまとめ - RailsとRubyとVimのブログ
 [http://alpaca.tc/blog/ruby/how-to-use-star.html](http://alpaca.tc/blog/ruby/how-to-use-star.html)
