@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <title>Glasse-age</title>
+  <description>覚え書きブログ</description>
+  <link href="http://ranats.github.io"/>
+  <atom:link href="http://ranats.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+  <updated>2016-04-02 07:57:32 +0900</updated>
+  <id>http://ranats.github.io</id>
+  <author>
+    <name>Ranats</name>
+  </author>
+  
+  <entry>
+    <title>引数をまとめて渡す | Ruby</title>
+    <id>http://ranats.github.io/2016/03/30/summarize-the-argument-in-ruby.html</id>
+    
+    <summary>&lt;p&gt;組み合わせを作る時に悩んだので覚え書き。
+&lt;br&gt;&lt;/p&gt;
+</summary>
+
+    <content type="html">&lt;p&gt;組み合わせを作る時に悩んだので覚え書き。
+&lt;br&gt;&lt;/p&gt;
+
+&lt;h4&gt;productメソッド(Array)&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;array.product(other_array, ...)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://ref.xaio.jp/ruby/classes/array/product&quot;&gt;product (Array) - Rubyリファレンス&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h4&gt;問題：&lt;/h4&gt;
+
+&lt;p&gt;複数の入力があり、データベースから当てはまる要素をもつ配列をそれぞれ生成し、
+それらの配列から組み合わせを生成する。&lt;/p&gt;
+
+&lt;p&gt;入力の数が3つ、とかの時に&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;a name=&quot;True-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;bar&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;baz&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;a name=&quot;True-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;
+&lt;a name=&quot;True-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+&lt;a name=&quot;True-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;4&lt;/span&gt;     &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;DB&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;collect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;include?&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)}&lt;/span&gt;
+&lt;a name=&quot;True-5&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;a name=&quot;True-6&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;6&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;product&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;みたいな感じで書いてた。&lt;/p&gt;
+
+&lt;p&gt;ばってん入力の数を可変にしようと思ったときに、productの引数どうしよう。ってなった。&lt;/p&gt;
+
+&lt;p&gt;調べてみると splat展開 とやらが使えそう。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;[*0...5]   #=&amp;gt; [0, 1, 2, 3, 4]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;[*&amp;#39;abcde&amp;#39;] #=&amp;gt; [&amp;#39;a&amp;#39;, &amp;#39;b&amp;#39;, &amp;#39;c&amp;#39;, &amp;#39;d&amp;#39;, &amp;#39;e&amp;#39;]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;つまり&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;[*Array.new(3){|i| Array.new(2){|j| (i*2)+j}}] #=&amp;gt; [[0,1], [2,3], [4,5]]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;ということで最初のコードを書き直してみる。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;a name=&quot;True-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;bar&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;baz&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;a name=&quot;True-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;
+&lt;a name=&quot;True-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+&lt;a name=&quot;True-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;4&lt;/span&gt;     &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;DB&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;collect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;include?&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)}&lt;/span&gt;
+&lt;a name=&quot;True-5&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;a name=&quot;True-6&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;6&lt;/span&gt; 
+&lt;a name=&quot;True-7&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;7&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shift&lt;/span&gt;
+&lt;a name=&quot;True-8&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;8&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;product&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;やったね！&lt;/p&gt;
+
+&lt;p&gt;そもそももっとスマートに組み合わせ作れるよって意見もあると思うけど、覚え書きという事でひとつ…
+&lt;p style=&quot;font-size: 0.8em;&quot;&gt;こういう書き方あるよってのがあればリプライ投げつけてください。&lt;/p&gt;&lt;/p&gt;
+
+&lt;h4&gt;参考&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ここまで出来る！RubyのSplat Operatorまとめ - RailsとRubyとVimのブログ
+&lt;a href=&quot;http://alpaca.tc/blog/ruby/how-to-use-star.html&quot;&gt;http://alpaca.tc/blog/ruby/how-to-use-star.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;splat での Array 式展開 - Qiita
+&lt;a href=&quot;http://qiita.com/hotchpotch/items/4228405cb0edc734fac3&quot;&gt;http://qiita.com/hotchpotch/items/4228405cb0edc734fac3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+
+    <updated>2016-03-30 00:00:00 +0900</updated>
+    <link href="http://ranats.github.io/2016/03/30/summarize-the-argument-in-ruby.html"/>
+    <guid isPermaLink="true">http://ranats.github.io/2016/03/30/summarize-the-argument-in-ruby.html</guid>
+    <category term="Algorithm"/>
+  </entry>
+  
+</feed>
