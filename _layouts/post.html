@@ -2,17 +2,17 @@
 layout: default
 ---
 
-<div id="main_content_wrap" class="outer">
-    <section id="main_content" class="inner">
         <ol>
             <h2 class="post-title" itemprop="name headline">{{ page.title }}</h2>
             <span class="post-meta"style="margin-left: 0.5em">{{ page.date | date: "%b %-d, %Y" }}</span>
             <div class="post-content" style="border: ridge;padding: 1em;margin-bottom: 2em">
                 {{ content }}
+                <span class="post-meta"style="margin-left: 0.5em">#{{ page.tag }}</span>
+
             </div>
-        
-        
-        <hr>
+
+
+            <hr>
         
         <nav style="margin-bottom: 3em;">
             <div align="right" style="float:left;margin: auto auto">
@@ -29,5 +29,3 @@ layout: default
             </div>
         </nav></ol>
         <div style="clear:both"></div>
-    </section>
-</div>
