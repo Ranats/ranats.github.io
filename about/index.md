@@ -48,7 +48,7 @@ title: about
 	- LPM?
 - S&Mシリーズ読んでる
 - WoT
-    - イギリスTier.7か8辺りまでやってた
+    - イギリスTier.7か8駆逐辺りまでやってた
 - 音ゲーマー(よわい)
 	- BeatmaniaIIDX (5段)
 	- pop'n music (30くらい)
