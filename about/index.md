@@ -11,6 +11,7 @@ title: about
 <a href="https://twitter.com/Ranats85"><img align='bottom' src='https://pbs.twimg.com/profile_images/625003062336204800/aT0IGkPy.png' width=100px style="border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px" alt='アイコン'></a>
 
 うさぎ。Arch。らなとす。
+よく食べる。体重がJC。
 
 #### Link
 - [Tiwtter](https://twitter.com/Ranats85)
@@ -20,7 +21,7 @@ title: about
 #### 何
 - Ruby (on Rails)
 - GA
-- <font size=1em>CTF</font>
+- <font size=1.2em>CTF</font>
 - 思いついたら追加しよ
 
 #### PC
@@ -44,6 +45,8 @@ title: about
 	- 40line -> 01:14 (tetris friends)
 	- LPM?
 - S&Mシリーズ読んでる
+- WoT
+    - イギリスTier.7か8辺りまでやってた
 - 音ゲーマー(よわい)
 	- BeatmaniaIIDX (5段)
 	- pop'n music (30くらい)
@@ -51,7 +54,5 @@ title: about
 - 犬猫
 - 回鍋肉
 
-
 #### どこ
 - 神奈川 ときどき 福岡
-
