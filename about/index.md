@@ -42,10 +42,10 @@ title: about
 - テトリス
 	- ぷよぷよテトリスで対人をはじめた。
 	- 40line -> 01:14 (tetris friends)
-	- LPMとかはよく知らない
+	- LPM?
 - S&Mシリーズ読んでる
 - 音ゲーマー(よわい)
-	- BeatmaniaIIDX (5段か6段くらい)
+	- BeatmaniaIIDX (5段)
 	- pop'n music (30くらい)
 	- DJ MAX
 - 犬猫
