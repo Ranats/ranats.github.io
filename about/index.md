@@ -21,6 +21,7 @@ title: about
 #### 何
 - Ruby (on Rails)
 - GA
+- Oculus DK2
 - <font size=1.2em>CTF</font>
 - 思いついたら追加しよ
 
