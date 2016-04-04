@@ -4,7 +4,7 @@
   <description>覚え書きブログ - グラサージュ</description>
   <link href="http://ranats.github.io"/>
   <atom:link href="http://ranats.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-  <updated>2016-04-04 21:21:29 +0900</updated>
+  <updated>2016-04-04 21:42:26 +0900</updated>
   <id>http://ranats.github.io</id>
   <author>
     <name>Ranats</name>
@@ -25,8 +25,7 @@
 &lt;h3&gt; おうちの複合機がこわれた &lt;/h3&gt;
 &lt;/div&gt;
 
-&lt;p&gt;インクホルダがホールドしてくれなかったり白紙吐いたりしたので、&lt;br&gt;
-PDFを外で印刷する前にpdfにメモ書きしながら読めるアプリが欲しかった。
+&lt;p&gt;インクホルダがホールドしてくれなかったり白紙吐いたりしたので、PDFを外で印刷する前にラクガキしながら読めるアプリが欲しかった。
 &lt;br&gt;&lt;/p&gt;
 
 &lt;h4&gt;要求&lt;/h4&gt;
@@ -37,29 +36,30 @@ PDFを外で印刷する前にpdfにメモ書きしながら読めるアプリ�
 &lt;li&gt;コメント/メモを日本語で入れられる。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h5&gt;1.Okular&lt;/h5&gt;
+&lt;h5&gt;1.Okular &lt;font size=2&gt;- &lt;a href=&quot;https://okular.kde.org/&quot;&gt;link&lt;/a&gt; / &lt;a href=&quot;https://aur.archlinux.org/packages/okular-git/&quot;&gt;[AUR]&lt;/a&gt;&lt;/font&gt;&lt;/h5&gt;
 
 &lt;p&gt;最初に見つけたのが「Okular」&lt;br&gt;
 機能的には不便は無かったけどgtkで無いかなーと思う。&lt;/p&gt;
 
-&lt;h5&gt;2.Foxit-Reader&lt;/h5&gt;
+&lt;h5&gt;2.Foxit-Reader &lt;font size=2&gt;- &lt;a href=&quot;https://www.foxitsoftware.com/products/pdf-reader/&quot;&gt;link&lt;/a&gt; / &lt;a href=&quot;https://aur.archlinux.org/packages/foxitreader/&quot;&gt;[AUR]&lt;/a&gt;&lt;/font&gt;&lt;/h5&gt;
 
 &lt;p&gt;見た目良い感じだったけど、コメントに漢字が使えなかった。&lt;br&gt;
 全部タイプライタでも良いっちゃ良いけども。&lt;/p&gt;
 
-&lt;h5&gt;3.PDF-XChange Viewer&lt;/h5&gt;
+&lt;h5&gt;3.PDF-XChange Viewer &lt;font size=2&gt;- &lt;a href=&quot;http://www.tracker-software.com/product/pdf-xchange-viewer&quot;&gt;link&lt;/a&gt; / &lt;a href=&quot;https://aur.archlinux.org/packages/pdf-xchange/&quot;&gt;[AUR]&lt;/a&gt;&lt;/font&gt;&lt;/h5&gt;
 
 &lt;p&gt;付箋つけて選択するとなんか落ちる。&lt;/p&gt;
 
-&lt;h5&gt;4.LibreOffice Drawer&lt;/h5&gt;
+&lt;h5&gt;4.LibreOffice Draw &lt;font size=2&gt;- &lt;a href=&quot;https://ja.libreoffice.org/discover/draw/&quot;&gt;link&lt;/a&gt;&lt;/font&gt;&lt;/h5&gt;
 
 &lt;p&gt;LibreOfficeで開けるやん、という情報を得る。&lt;br&gt;
 図とかも入れられるし編集には向いてるかもしれないが、「読みやすく」は無かった。&lt;br&gt;
 あと何か重い気がする。&lt;/p&gt;
 
-&lt;h5&gt;5.acroread&lt;/h5&gt;
+&lt;h5&gt;5.acroread &lt;font size=2&gt;- &lt;a href=&quot;https://aur.archlinux.org/packages/acroread/&quot;&gt;[AUR]&lt;/a&gt;&lt;/font&gt;&lt;/h5&gt;
 
-&lt;p&gt;なんか日本語が全部「●」になった。&lt;br&gt;
+&lt;p&gt;Adobe reader ...なんだろうけど
+なんか日本語が全部「●」になった。&lt;br&gt;
 マーカー等が見当たらなかったのでパス。&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;
@@ -68,7 +68,7 @@ Foxit-Reader が読みやすい気がした。&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;h5&gt;6.Gloobus preview&lt;/h5&gt;
+&lt;h5&gt;6.Gloobus preview &lt;font size=2&gt;- &lt;a href=&quot;http://gloobus.net/gloobus-preview/&quot;&gt;link&lt;/a&gt; / &lt;a href=&quot;https://www.archlinux.org/packages/community/i686/gloobus-preview/&quot;&gt;[AUR]&lt;/a&gt;&lt;/font&gt;&lt;/h5&gt;
 
 &lt;p&gt;趣旨は違うけど見かけたので入れたら良かった。
 軽量なんでもビューワ?&lt;br&gt;
