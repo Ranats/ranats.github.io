@@ -4,7 +4,7 @@
   <description>覚え書きブログ - グラサージュ</description>
   <link href="http://ranats.github.io"/>
   <atom:link href="http://ranats.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-  <updated>2016-04-04 21:10:57 +0900</updated>
+  <updated>2016-04-04 21:21:29 +0900</updated>
   <id>http://ranats.github.io</id>
   <author>
     <name>Ranats</name>
@@ -14,12 +14,18 @@
     <title>PDFを読みたい</title>
     <id>http://ranats.github.io/2016/04/04/pdf-viewer-on-linux.html</id>
     
-    <summary>&lt;p&gt;おうちの複合機の調子が悪いので、&lt;br&gt;
-PDFを外で印刷する前にpdfにメモ書きしながら読めるアプリが欲しかった。
-&lt;br&gt;&lt;/p&gt;
+    <summary>&lt;div style=&quot;padding-left:25%&quot;&gt;
+&lt;h3&gt; What&#39;s new &lt;/h3&gt;
+&lt;h3&gt; おうちの複合機がこわれた &lt;/h3&gt;
+&lt;/div&gt;
 </summary>
 
-    <content type="html">&lt;p&gt;おうちの複合機の調子が悪いので、&lt;br&gt;
+    <content type="html">&lt;div style=&quot;padding-left:25%&quot;&gt;
+&lt;h3&gt; What&#39;s new &lt;/h3&gt;
+&lt;h3&gt; おうちの複合機がこわれた &lt;/h3&gt;
+&lt;/div&gt;
+
+&lt;p&gt;インクホルダがホールドしてくれなかったり白紙吐いたりしたので、&lt;br&gt;
 PDFを外で印刷する前にpdfにメモ書きしながら読めるアプリが欲しかった。
 &lt;br&gt;&lt;/p&gt;
 
