@@ -19,7 +19,10 @@ title: about
 - [Wishlist](http://www.amazon.co.jp/registry/wishlist/1YM9QBHU730RY)
 
 #### 何
-- Ruby (on Rails)
+- Ruby
+    - Sinatra
+    - nokogiri / mechanize
+    - ... on Rails
 - GA
 - Webスクレイピング/クローラ
 - Oculus DK2
