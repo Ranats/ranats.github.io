@@ -4,11 +4,85 @@
   <description>覚え書きブログ - グラサージュ</description>
   <link href="http://ranats.github.io"/>
   <atom:link href="http://ranats.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-  <updated>2016-04-03 06:57:47 +0900</updated>
+  <updated>2016-04-04 20:58:25 +0900</updated>
   <id>http://ranats.github.io</id>
   <author>
     <name>Ranats</name>
   </author>
+  
+  <entry>
+    <title>PDFを読みたい</title>
+    <id>http://ranats.github.io/2016/04/04/pdf-viewer-on-linux.html</id>
+    
+    <summary>&lt;p&gt;おうちの複合機の調子が悪いので、&lt;br&gt;
+PDFを外で印刷する前にpdfにメモ書きしながら読めるアプリが欲しかった。
+&lt;br&gt;&lt;/p&gt;
+</summary>
+
+    <content type="html">&lt;p&gt;おうちの複合機の調子が悪いので、&lt;br&gt;
+PDFを外で印刷する前にpdfにメモ書きしながら読めるアプリが欲しかった。
+&lt;br&gt;&lt;/p&gt;
+
+&lt;h4&gt;要求&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;読みやすい&lt;/li&gt;
+&lt;li&gt;マーカーが引ける&lt;/li&gt;
+&lt;li&gt;コメント/メモを日本語で入れられる。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5&gt;1.Okular&lt;/h5&gt;
+
+&lt;p&gt;最初に見つけたのが「Okular」&lt;br&gt;
+機能的には不便は無かったけどgtkで無いかなーと思う。&lt;/p&gt;
+
+&lt;h5&gt;2.Foxit-Reader&lt;/h5&gt;
+
+&lt;p&gt;見た目良い感じだったけど、コメントに漢字が使えなかった。&lt;br&gt;
+全部タイプライタでも良いっちゃ良いけども。&lt;/p&gt;
+
+&lt;h5&gt;3.PDF-XChange Viewer&lt;/h5&gt;
+
+&lt;p&gt;付箋つけて選択するとなんか落ちる。&lt;/p&gt;
+
+&lt;h5&gt;4.LibreOffice Drawer&lt;/h5&gt;
+
+&lt;p&gt;LibreOfficeで開けるやん、という情報を得る。&lt;br&gt;
+図とかも入れられるし編集には向いてるかもしれないが、「読みやすく」は無かった。&lt;br&gt;
+あと何か重い気がする。&lt;/p&gt;
+
+&lt;h5&gt;5.acroread&lt;/h5&gt;
+
+&lt;p&gt;なんか日本語が全部「●」になった。&lt;br&gt;
+マーカー等が見当たらなかったのでパス。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;
+とりあえず機能的には Okular が良い感じだったけど、&lt;br&gt;
+Foxit-Reader が読みやすい気がした。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5&gt;6.Gloobus preview&lt;/h5&gt;
+
+&lt;p&gt;趣旨は違うけど見かけたので入れたら良かった。
+軽量なんでもビューワ?&lt;br&gt;
+メディアも再生してくれる。&lt;/p&gt;
+
+&lt;div class=&#39;inpic&#39; style=&quot;margin-top:-20px;margin-bottom:-20px&quot;&gt;
+&lt;img src=&quot;/images/gloobus.png&quot; width=100%/&gt;
+&lt;/div&gt;
+
+&lt;p&gt;少し透過してるの良い。&lt;br&gt;
+同フォルダ内なら自動で次を再生してくれる。&lt;/p&gt;
+
+&lt;p&gt;アルバム出てるの今更知ったので買ってきました。好き。&lt;/p&gt;
+</content>
+
+    <updated>2016-04-04 00:00:00 +0900</updated>
+    <link href="http://ranats.github.io/2016/04/04/pdf-viewer-on-linux.html"/>
+    <guid isPermaLink="true">http://ranats.github.io/2016/04/04/pdf-viewer-on-linux.html</guid>
+    <category term="ArchLinux"/>
+  </entry>
   
   <entry>
     <title>引数をまとめて渡す | Ruby</title>

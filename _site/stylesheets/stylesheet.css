@@ -97,6 +97,11 @@ p {
   text-indent: 1em;
 }
 
+.inpic{}
+.inpic p{
+
+}
+
 footer p {
   color: #f2f2f2;
 }
@@ -219,7 +224,7 @@ ul {
 ol {
   list-style-position: inside;
   list-style: decimal;
-  padding-left: 20px;
+  padding-left: 50px;
 }
 
 dl dt {
