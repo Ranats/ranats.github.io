@@ -383,7 +383,14 @@ Full-Width Styles
   background: #212121;
 }
 
-
+.babylink-box {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+.babylink-info{
+  padding-top: 10px;
+}
 
 /*******************************************************************************
 Small Device Styles
