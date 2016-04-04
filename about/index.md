@@ -39,14 +39,13 @@ title: about
 		(Yanagisawa A-901 / Yamaha WX5)
 	- Jazz
 	- メロスピ
-	- [Champagne] <font size=1em>とか</font> BLUE ENCOUNT <font size=1em>とか</font> MWAM <font size=1em>とか</font> ワンオク <font size=1em>とか</font> miwa <font size=1em>とか</font>
+	- [Champagne] <font size=1em>とか</font> MWAM <font size=1em>とか</font> BLUE ENCOUNT <font size=1em>とか</font> ワンオク <font size=1em>とか</font> ポルノグラフィティ <font size=1em>とか</font>
 	- おジャ魔女どれみ
 	- ゆゆ式
 - テトリス
 	- ぷよぷよテトリスで対人をはじめた。
 	- 40line -> 01:14 (tetris friends)
 	- LPM?
-- S&Mシリーズ読んでる
 - WoT
     - イギリスTier.7か8駆逐辺りまでやってた
 - 音ゲーマー(よわい)
@@ -54,7 +53,9 @@ title: about
 	- pop'n music (30くらい)
 	- DJ MAX
 - 犬猫
+    - かわいい
 - 回鍋肉
+    - おいしい
 
 #### どこ
 - 神奈川 ときどき 福岡
