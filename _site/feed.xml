@@ -4,11 +4,65 @@
   <description>覚え書きブログ - グラサージュ</description>
   <link href="http://ranats.github.io"/>
   <atom:link href="http://ranats.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-  <updated>2016-04-05 00:28:15 +0900</updated>
+  <updated>2016-04-05 21:54:33 +0900</updated>
   <id>http://ranats.github.io</id>
   <author>
     <name>Ranats</name>
   </author>
+  
+  <entry>
+    <title>ntfsなボリュームを読み書きする</title>
+    <id>http://ranats.github.io/2016/04/05/ntfs-on-linux.html</id>
+    
+    <summary>&lt;p&gt;ntfsなボリュームに書き込みが出来なかったので覚え書き。
+&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+</summary>
+
+    <content type="html">&lt;p&gt;ntfsなボリュームに書き込みが出来なかったので覚え書き。
+&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;ちょっとファイルを移そうと思って、ふとコピーしようとした時に、&lt;br&gt;
+「読み込み専用です！」って言われて、&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ mount -w /dev/sdaX /mnt/hoge&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;ってしても&lt;code&gt;mount&lt;/code&gt;で確認すると&lt;code&gt;(ro, ...&lt;/code&gt;になってる。&lt;/p&gt;
+
+&lt;p&gt;権限とか所有者、グループとかかなーと思ったけど、
+調べてみると&lt;code&gt;NTFS-3G&lt;/code&gt;ってのを入れると良さそう。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ yaourt -S ntfs-3g&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;入れたらマウント。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ mount -t ntfs-3g /dev/sdaX /mount/hoge&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;エンコードだの云々書いてる記事もあったけど、特に指定なしでも以後問題なさそう。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Arch ではマウントタイプ ntfs-3g を明示的に指定する必要はありません。ntfs-3g パッケージがインストールされていれば mount コマンドはデフォルトで /usr/bin/ntfs-3g にシンボリックリンクされている /usr/bin/mount.ntfs を使用します。
+&lt;br&gt;&lt;a href=&quot;https://wiki.archlinuxjp.org/index.php/NTFS-3G#.E6.89.8B.E5.8B.95.E3.83.9E.E3.82.A6.E3.83.B3.E3.83.88&quot;&gt;https://wiki.archlinuxjp.org/index.php/NTFS-3G#.E6.89.8B.E5.8B.95.E3.83.9E.E3.82.A6.E3.83.B3.E3.83.88&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;との事で、&lt;code&gt;ntfs-3g&lt;/code&gt;をインストールしていれば普通に(GUI上のファイルマネージャも)マウントするとやってくれるみたい。&lt;/p&gt;
+
+&lt;h4&gt;参考&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;NTFS-3G - ArchWiki&lt;br&gt;
+&lt;a href=&quot;https://wiki.archlinuxjp.org/index.php/NTFS-3G&quot;&gt;https://wiki.archlinuxjp.org/index.php/NTFS-3G&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;LinuxでNTFSのHDDをマウントする - 犬も歩けば棒も歩く
+&lt;a href=&quot;http://d.hatena.ne.jp/prime503/20091024/1256344170&quot;&gt;http://d.hatena.ne.jp/prime503/20091024/1256344170&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+
+    <updated>2016-04-05 00:00:00 +0900</updated>
+    <link href="http://ranats.github.io/2016/04/05/ntfs-on-linux.html"/>
+    <guid isPermaLink="true">http://ranats.github.io/2016/04/05/ntfs-on-linux.html</guid>
+    <category term="ArchLinux"/>
+  </entry>
   
   <entry>
     <title>PDFを読みたい</title>
@@ -79,7 +133,8 @@ Foxit-Reader が読みやすい気がした。&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;少し透過してるの良い。&lt;br&gt;
-同フォルダ内なら自動で次を再生してくれる。&lt;/p&gt;
+同フォルダ内なら自動で次を再生してくれる。&lt;br&gt;
+キーボードのメディアキーも効いて良い。&lt;/p&gt;
 
 &lt;p&gt;アルバム出てるの今更知ったので買ってきました。好き。&lt;/p&gt;
 
