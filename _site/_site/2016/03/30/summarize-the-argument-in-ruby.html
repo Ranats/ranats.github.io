@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Ranats.GitHub.io : ">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/syntax.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/genericons.css">
+    <link rel="alternate" type="application/atom+xml" title="Glasse-age" href="/feed.xml"/>
+    <title>Glasse-age</title>
+</head>
+
+<body>
+<!-- HEADER -->
+<div id="header_wrap" class="outer">
+    <header class="inner" style="padding-bottom: 1%">
+        <a id="forkme_banner" href="https://github.com/Ranats/jekyll">View on GitHub</a>
+
+        <h1 id="project_title"><a href=http://ranats.github.io>Glasse-age</a></h1>
+        <h2 id="project_tagline" style="font-size: 1em">ぐらさーじゅ</h2>
+        <br>
+        <div style="word-spacing: 1em" align="right">
+            <span class="genericon genericon-home" style="color: white;font-size: 1.5em"><a href='/'>home</a></span>
+            <span class="genericon genericon-user" style="color: white;font-size: 1.5em"><a
+                    href='/about'>about</a></span>
+            <span class="genericon genericon-feed" style="color: white;font-size: 1.5em"><a
+                    href='/feed.xml'>feed</a></span>
+        </div>
+    </header>
+</div>
+
+
+<div class="page-content">
+    <div class="wrapper">
+        <div id="main_content_wrap" class="outer">
+            <section id="main_content" class="inner">
+
+                            <h2 class="post-title" itemprop="name headline">引数をまとめて渡す | Ruby</h2>
+            <span class="post-meta"style="margin-left: 0.5em">Mar 30, 2016</span>
+            <div class="post-content" style="border: ridge;padding: 1em;margin-bottom: 2em">
+                <p>組み合わせを作る時に悩んだので覚え書き。
+<br></p>
+
+<h4>productメソッド(Array)</h4>
+
+<p><code>array.product(other_array, ...)</code></p>
+
+<p><a href="http://ref.xaio.jp/ruby/classes/array/product">product (Array) - Rubyリファレンス</a></p>
+
+<p><br></p>
+
+<h4>問題：</h4>
+
+<p>複数の入力があり、データベースから当てはまる要素をもつ配列をそれぞれ生成し、
+それらの配列から組み合わせを生成する。</p>
+
+<p>入力の数が3つ、とかの時に</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><a name="True-1"></a><span class="lineno">1</span> <span class="n">requests</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span><span class="s2">&quot;baz&quot;</span><span class="o">]</span>
+<a name="True-2"></a><span class="lineno">2</span> <span class="n">array</span> <span class="o">=</span> <span class="o">[]</span>
+<a name="True-3"></a><span class="lineno">3</span> <span class="n">requests</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">request</span><span class="o">|</span>
+<a name="True-4"></a><span class="lineno">4</span>     <span class="n">array</span> <span class="o">&lt;&lt;</span> <span class="no">DB</span><span class="o">.</span><span class="n">collect</span><span class="p">{</span><span class="o">|</span><span class="n">item</span><span class="o">|</span> <span class="n">item</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="n">request</span><span class="p">)}</span>
+<a name="True-5"></a><span class="lineno">5</span> <span class="k">end</span>
+<a name="True-6"></a><span class="lineno">6</span> <span class="n">array</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="n">product</span><span class="p">(</span><span class="n">array</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">,</span><span class="n">array</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">)</span>
+</code></pre></div>
+<p>みたいな感じで書いてた。</p>
+
+<p>ばってん入力の数を可変にしようと思ったときに、productの引数どうしよう。ってなった。</p>
+
+<p>調べてみると splat展開 とやらが使えそう。</p>
+
+<p><code>[*0...5]   #=&gt; [0, 1, 2, 3, 4]</code></p>
+
+<p><code>[*&#39;abcde&#39;] #=&gt; [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;]</code></p>
+
+<p>つまり</p>
+
+<p><code>[*Array.new(3){|i| Array.new(2){|j| (i*2)+j}}] #=&gt; [[0,1], [2,3], [4,5]]</code></p>
+
+<p>ということで最初のコードを書き直してみる。</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><a name="True-1"></a><span class="lineno">1</span> <span class="n">requests</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span><span class="s2">&quot;baz&quot;</span><span class="p">,</span> <span class="o">.</span><span class="n">.</span><span class="o">.</span> <span class="o">]</span>
+<a name="True-2"></a><span class="lineno">2</span> <span class="n">array</span> <span class="o">=</span> <span class="o">[]</span>
+<a name="True-3"></a><span class="lineno">3</span> <span class="n">requests</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">request</span><span class="o">|</span>
+<a name="True-4"></a><span class="lineno">4</span>     <span class="n">array</span> <span class="o">&lt;&lt;</span> <span class="no">DB</span><span class="o">.</span><span class="n">collect</span><span class="p">{</span><span class="o">|</span><span class="n">item</span><span class="o">|</span> <span class="n">item</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="n">request</span><span class="p">)}</span>
+<a name="True-5"></a><span class="lineno">5</span> <span class="k">end</span>
+<a name="True-6"></a><span class="lineno">6</span> 
+<a name="True-7"></a><span class="lineno">7</span> <span class="n">head</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">shift</span>
+<a name="True-8"></a><span class="lineno">8</span> <span class="n">head</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="o">*</span><span class="n">array</span><span class="p">)</span>
+</code></pre></div>
+<p>やったね！</p>
+
+<p>そもそももっとスマートに組み合わせ作れるよって意見もあると思うけど、覚え書きという事でひとつ…
+<p style="font-size: 0.8em;">こういう書き方あるよってのがあればリプライ投げつけてください。</p></p>
+
+<h4>参考</h4>
+
+<ul>
+<li>ここまで出来る！RubyのSplat Operatorまとめ - RailsとRubyとVimのブログ
+<a href="http://alpaca.tc/blog/ruby/how-to-use-star.html">http://alpaca.tc/blog/ruby/how-to-use-star.html</a></li>
+<li>splat での Array 式展開 - Qiita
+<a href="http://qiita.com/hotchpotch/items/4228405cb0edc734fac3">http://qiita.com/hotchpotch/items/4228405cb0edc734fac3</a></li>
+</ul>
+
+                <span class="post-meta"style="margin-left: 0.5em">#Algorithm</span>
+
+            </div>
+
+
+            <hr>
+        
+        <nav style="margin-bottom: 3em;">
+            <div align="right" style="float:left;margin: auto auto">
+            
+                Next<br>
+            &lt;&lt; <a href="/2016/04/04/pdf-viewer-on-linux.html">PDFを読みたい</a>
+            
+            </div>
+            <div align="left" style="float:right;margin: auto auto">
+            
+            </div>
+        </nav>
+        <div style="clear:both"></div>
+
+
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER  -->
+<div id="footer_wrap" class="outer">
+    <footer class="inner">
+        <p>© 2016 Ranats</p>
+    </footer>
+</div>
+
+</body>
+
+</html>
