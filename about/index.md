@@ -40,6 +40,7 @@ title: about
 - 音楽
 	- アルトサックス吹いてた。
 		(Yanagisawa A-901 / Yamaha WX5)
+		ヤナギサワメタル欲しい
 	- Jazz
 	- メロスピ
 	- [Champagne] <font size=1em>とか</font> MWAM <font size=1em>とか</font> BLUE ENCOUNT <font size=1em>とか</font> ワンオク <font size=1em>とか</font> ポルノグラフィティ <font size=1em>とか</font>
