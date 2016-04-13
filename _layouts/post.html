@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
             <h2 class="post-title" itemprop="name headline">{{ page.title }}</h2>
             <span class="post-meta"style="margin-left: 0.5em">{{ page.date | date: "%b %-d, %Y" }}</span>
             <div class="post-content" style="border: ridge;padding: 1em;margin-bottom: 2em">
@@ -14,16 +13,20 @@ layout: default
             <hr>
         
         <nav style="margin-bottom: 3em;">
-            <div align="right" style="float:left;margin: auto auto">
+            <div align="right" style="float:left;margin: auto auto;width: 40%">
             {% if page.next %}
-                Next<br>
-            &lt;&lt; <a href="{{ page.next.url }}">{{ page.next.title }}</a>
+                <a href="{{ page.next.url }}">
+                    Next<br>
+                    &lt;&lt; {{ page.next.title }}
+                </a>
             {% endif %}
             </div>
-            <div align="left" style="float:right;margin: auto auto">
+            <div align="left" style="float:right;margin: auto auto;width: 40%">
             {% if page.previous %}
-                Previous<br>
-            <a href="{{ page.previous.url }}">{{ page.previous.title }}</a> &gt;&gt;
+                <a href="{{ page.previous.url }}">
+                    Previous<br>
+                    {{ page.previous.title }} &gt;&gt;
+                </a>
             {% endif %}
             </div>
         </nav>

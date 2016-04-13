@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/syntax.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/genericons.css">
     <link rel="alternate" type="application/atom+xml" title="Glasse-age" href="/feed.xml"/>
-    <title>{{ site.title }}</title>
+    <title>{% if page.title != site.title %} {{page.title}} | {% endif %}{{ site.title }}</title>
 </head>
 
 <body>
