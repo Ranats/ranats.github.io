@@ -4,11 +4,74 @@
   <description>覚え書きブログ - グラサージュ</description>
   <link href="http://ranats.github.io"/>
   <atom:link href="http://ranats.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-  <updated>2016-04-10 10:14:18 +0900</updated>
+  <updated>2016-04-13 19:57:03 +0900</updated>
   <id>http://ranats.github.io</id>
   <author>
     <name>Ranats</name>
   </author>
+  
+  <entry>
+    <title>ibus-mozcの初期入力モードを「ひらがな」にする。</title>
+    <id>http://ranats.github.io/2016/04/13/ibus-mozc-fixed.html</id>
+    
+    <summary>&lt;p&gt;ibus-mozc、起動後の初期入力モードが「直接入力」になっていて、
+毎回マウス操作で入力モードを「ひらがな」に切り替えるの面倒だーと常々思っていたので修正した話。
+&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+</summary>
+
+    <content type="html">&lt;p&gt;ibus-mozc、起動後の初期入力モードが「直接入力」になっていて、
+毎回マウス操作で入力モードを「ひらがな」に切り替えるの面倒だーと常々思っていたので修正した話。
+&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;調べてみると公式が「現行バージョンでは初期モードを変更する事はできない」って言ってるのを見かけた。&lt;/p&gt;
+
+&lt;p&gt;ソースを修正してビルドすればイケる、との事。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;True-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt; $ yaourt -G ibus-mozc
+&lt;a name=&quot;True-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;2&lt;/span&gt; $ cd ibus-mozc
+&lt;a name=&quot;True-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;3&lt;/span&gt; $ ls
+&lt;a name=&quot;True-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;4&lt;/span&gt; PKGBUILD emacs-mozc.install
+&lt;a name=&quot;True-5&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;5&lt;/span&gt; 
+&lt;a name=&quot;True-6&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;6&lt;/span&gt; $ makepkg -s
+&lt;a name=&quot;True-7&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;7&lt;/span&gt; ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;「property_handler.cc」の83行目、「const bool kActivatedOnLaunch = false;」をtrueに変更する事で設定できるらしい。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;True-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt; 1&lt;/span&gt; $ find -name property_handler.cc
+&lt;a name=&quot;True-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt; 2&lt;/span&gt; ./src/mozc/src/unix/ibus/property_handler.cc
+&lt;a name=&quot;True-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt; 3&lt;/span&gt; 
+&lt;a name=&quot;True-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt; 4&lt;/span&gt; $ vim src/mozc/src/unix/ibus/property_handler.cc
+&lt;a name=&quot;True-5&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt; 5&lt;/span&gt; 
+&lt;a name=&quot;True-6&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt; 6&lt;/span&gt; ...
+&lt;a name=&quot;True-7&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt; 7&lt;/span&gt; // Some users expect that Mozc is turned off by default on IBus 1.5.0 and later.
+&lt;a name=&quot;True-8&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt; 8&lt;/span&gt; // https://code.google.com/p/mozc/issues/detail?id=201
+&lt;a name=&quot;True-9&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt; 9&lt;/span&gt; // On IBus 1.4.x, IBus expects that an IME should always be turned on and
+&lt;a name=&quot;True-10&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;10&lt;/span&gt; // IME on/off keys are handled by IBus itself rather than each IME.
+&lt;a name=&quot;True-11&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;11&lt;/span&gt; #if IBUS_CHECK_VERSION(1, 5, 0)
+&lt;a name=&quot;True-12&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;12&lt;/span&gt; const bool kActivatedOnLaunch = true; //false;
+&lt;a name=&quot;True-13&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;13&lt;/span&gt; #else
+&lt;a name=&quot;True-14&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;14&lt;/span&gt; const bool kActivatedOnLaunch = true;
+&lt;a name=&quot;True-15&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;15&lt;/span&gt; #endif  // IBus&amp;gt;=1.5.0
+&lt;a name=&quot;True-16&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;16&lt;/span&gt; ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ビルドする。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;True-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt; $ yaourt -U ibus-mozc-2.17.2313.102-1-x86_64.pkg.tar.xz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br&gt;
+再ログイン後入力メソッドを切り替えると、ちゃんと「ひらがな」入力が初期モードに設定されてる。&lt;/p&gt;
+
+&lt;h4&gt;参考&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ibus-mozc の初期モードを「ひらがな」入力にする | uvirt.com &lt;a href=&quot;https://www.uvirt.com/wp1/20141026-134&quot;&gt;https://www.uvirt.com/wp1/20141026-134&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+
+    <updated>2016-04-13 00:00:00 +0900</updated>
+    <link href="http://ranats.github.io/2016/04/13/ibus-mozc-fixed.html"/>
+    <guid isPermaLink="true">http://ranats.github.io/2016/04/13/ibus-mozc-fixed.html</guid>
+    <category term="ArchLinux"/>
+  </entry>
   
   <entry>
     <title>ntfsなボリュームを読み書きする</title>

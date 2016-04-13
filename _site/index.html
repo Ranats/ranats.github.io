@@ -44,6 +44,68 @@
             
 
             <h2>
+                <a class="post-link" href="/2016/04/13/ibus-mozc-fixed.html">ibus-mozcの初期入力モードを「ひらがな」にする。 </a>
+            </h2>
+            <span class="post-meta" style="margin-left: 0.5em">Apr 13, 2016</span>
+
+            <div class="post-content" style="border: ridge;padding: 1em;margin-bottom: 2em">
+                <!--<p>ibus-mozc、起動後の初期入力モードが「直接入力」になっていて、
+毎回マウス操作で入力モードを「ひらがな」に切り替えるの面倒だーと常々思っていたので修正した話。
+<br>
+<br></p>
+-->
+                <p>ibus-mozc、起動後の初期入力モードが「直接入力」になっていて、
+毎回マウス操作で入力モードを「ひらがな」に切り替えるの面倒だーと常々思っていたので修正した話。
+<br>
+<br></p>
+
+<p>調べてみると公式が「現行バージョンでは初期モードを変更する事はできない」って言ってるのを見かけた。</p>
+
+<p>ソースを修正してビルドすればイケる、との事。</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="True-1"></a><span class="lineno">1</span> $ yaourt -G ibus-mozc
+<a name="True-2"></a><span class="lineno">2</span> $ cd ibus-mozc
+<a name="True-3"></a><span class="lineno">3</span> $ ls
+<a name="True-4"></a><span class="lineno">4</span> PKGBUILD emacs-mozc.install
+<a name="True-5"></a><span class="lineno">5</span> 
+<a name="True-6"></a><span class="lineno">6</span> $ makepkg -s
+<a name="True-7"></a><span class="lineno">7</span> ...
+</code></pre></div>
+<p>「property_handler.cc」の83行目、「const bool kActivatedOnLaunch = false;」をtrueに変更する事で設定できるらしい。</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="True-1"></a><span class="lineno"> 1</span> $ find -name property_handler.cc
+<a name="True-2"></a><span class="lineno"> 2</span> ./src/mozc/src/unix/ibus/property_handler.cc
+<a name="True-3"></a><span class="lineno"> 3</span> 
+<a name="True-4"></a><span class="lineno"> 4</span> $ vim src/mozc/src/unix/ibus/property_handler.cc
+<a name="True-5"></a><span class="lineno"> 5</span> 
+<a name="True-6"></a><span class="lineno"> 6</span> ...
+<a name="True-7"></a><span class="lineno"> 7</span> // Some users expect that Mozc is turned off by default on IBus 1.5.0 and later.
+<a name="True-8"></a><span class="lineno"> 8</span> // https://code.google.com/p/mozc/issues/detail?id=201
+<a name="True-9"></a><span class="lineno"> 9</span> // On IBus 1.4.x, IBus expects that an IME should always be turned on and
+<a name="True-10"></a><span class="lineno">10</span> // IME on/off keys are handled by IBus itself rather than each IME.
+<a name="True-11"></a><span class="lineno">11</span> #if IBUS_CHECK_VERSION(1, 5, 0)
+<a name="True-12"></a><span class="lineno">12</span> const bool kActivatedOnLaunch = true; //false;
+<a name="True-13"></a><span class="lineno">13</span> #else
+<a name="True-14"></a><span class="lineno">14</span> const bool kActivatedOnLaunch = true;
+<a name="True-15"></a><span class="lineno">15</span> #endif  // IBus&gt;=1.5.0
+<a name="True-16"></a><span class="lineno">16</span> ...
+</code></pre></div>
+<p>ビルドする。</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="True-1"></a><span class="lineno">1</span> $ yaourt -U ibus-mozc-2.17.2313.102-1-x86_64.pkg.tar.xz
+</code></pre></div>
+<p><br>
+再ログイン後入力メソッドを切り替えると、ちゃんと「ひらがな」入力が初期モードに設定されてる。</p>
+
+<h4>参考</h4>
+
+<ul>
+<li>ibus-mozc の初期モードを「ひらがな」入力にする | uvirt.com <a href="https://www.uvirt.com/wp1/20141026-134">https://www.uvirt.com/wp1/20141026-134</a></li>
+</ul>
+
+                <span class="post-meta"style="margin-left: 0.5em">#ArchLinux</span>
+
+            </div>
+            
+
+            <h2>
                 <a class="post-link" href="/2016/04/05/ntfs-on-linux.html">ntfsなボリュームを読み書きする </a>
             </h2>
             <span class="post-meta" style="margin-left: 0.5em">Apr 5, 2016</span>
