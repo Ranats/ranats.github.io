@@ -4,11 +4,63 @@
   <description>覚え書きブログ - グラサージュ</description>
   <link href="http://ranats.github.io"/>
   <atom:link href="http://ranats.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-  <updated>2016-04-13 20:40:53 +0900</updated>
+  <updated>2016-04-14 20:08:49 +0900</updated>
   <id>http://ranats.github.io</id>
   <author>
     <name>Ranats</name>
   </author>
+  
+  <entry>
+    <title>urxvtのフォントサイズを動的に変える話</title>
+    <id>http://ranats.github.io/2016/04/14/urxvt-fontsize.html</id>
+    
+    <summary>&lt;p&gt;ターミナルのフォントサイズをﾍﾟﾍﾟｯって変えてるの良いなーと思ったので。
+&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+</summary>
+
+    <content type="html">&lt;p&gt;ターミナルのフォントサイズをﾍﾟﾍﾟｯって変えてるの良いなーと思ったので。
+&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://wiki.archlinuxjp.org/index.php/Rxvt-unicode#.E3.83.95.E3.82.A9.E3.83.B3.E3.83.88.E3.82.B5.E3.82.A4.E3.82.BA.E3.82.92.E5.8D.B3.E5.BA.A7.E3.81.AB.E5.A4.89.E6.9B.B4&quot;&gt;ArchWiki&lt;/a&gt;にはPerl拡張とやらを使えばキーバインドでﾍﾟﾍﾟｯって出来るって書いてたけど、
+なんかキーバインドが反応してくれなかった。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://bbs.archlinux.org/viewtopic.php?id=44121&quot;&gt;このフォーラム&lt;/a&gt;曰く&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;printf &amp;#39;\33]50;%s\007&amp;#39; &amp;quot;xft:Terminus:pixelsize=20&amp;quot;&lt;/code&gt;  &lt;/p&gt;
+
+&lt;p&gt;でフォントサイズが変えられるとのこと。
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;~/.Xdefaultsに
+&lt;code&gt;urxvt.keysym.C-0: command ...&lt;/code&gt;
+を追記したら動きはしたけど「+1px」とかは出来そうになかったのでシェルスクリプトを書く。&lt;br&gt;
+&lt;font size=2&gt;urxvtのフォントサイズを拾える変数とかあったりしないのかな?&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;~/bin/urxvt-font&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;True-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#!/bin/sh&lt;/span&gt;
+&lt;a name=&quot;True-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;printf&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;\33]50;%s\007&amp;#39;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;xft:Ricty:Bold:antialias=true:size=$1&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;これで&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ urxvt-font 10&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;とかで好きなフォントサイズに変えられるように。やったね。&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;ちなみに&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ urxvt -fn xft:Ricty:pixelsize=10&lt;/code&gt;  &lt;/p&gt;
+
+&lt;p&gt;とかオプション付けると指定したフォントで新しく開けるみたい。&lt;/p&gt;
+</content>
+
+    <updated>2016-04-14 00:00:00 +0900</updated>
+    <link href="http://ranats.github.io/2016/04/14/urxvt-fontsize.html"/>
+    <guid isPermaLink="true">http://ranats.github.io/2016/04/14/urxvt-fontsize.html</guid>
+    <category term="ArchLinux"/>
+  </entry>
   
   <entry>
     <title>ibus-mozcの初期入力モードを「ひらがな」にする。</title>

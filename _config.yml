@@ -22,7 +22,7 @@ redcarpet:
   extensions: [tables,autolink,strikethrough,fenced_code_blocks]
 #markdown: kramdown
 #kramdown:
-#    highlighter: rouge
+#highlighter: rouge
 #    syntax_highlighter_opts:
 
 highlighter: pygments

@@ -44,6 +44,57 @@
             
 
             <h2>
+                <a class="post-link" href="/2016/04/14/urxvt-fontsize.html">urxvtのフォントサイズを動的に変える話 </a>
+            </h2>
+            <span class="post-meta" style="margin-left: 0.5em">Apr 14, 2016</span>
+
+            <div class="post-content" style="border: ridge;padding: 1em;margin-bottom: 2em">
+                <!--<p>ターミナルのフォントサイズをﾍﾟﾍﾟｯって変えてるの良いなーと思ったので。
+<br>
+<br></p>
+-->
+                <p>ターミナルのフォントサイズをﾍﾟﾍﾟｯって変えてるの良いなーと思ったので。
+<br>
+<br></p>
+
+<p><a href="https://wiki.archlinuxjp.org/index.php/Rxvt-unicode#.E3.83.95.E3.82.A9.E3.83.B3.E3.83.88.E3.82.B5.E3.82.A4.E3.82.BA.E3.82.92.E5.8D.B3.E5.BA.A7.E3.81.AB.E5.A4.89.E6.9B.B4">ArchWiki</a>にはPerl拡張とやらを使えばキーバインドでﾍﾟﾍﾟｯって出来るって書いてたけど、
+なんかキーバインドが反応してくれなかった。</p>
+
+<p><a href="https://bbs.archlinux.org/viewtopic.php?id=44121">このフォーラム</a>曰く</p>
+
+<p><code>printf &#39;\33]50;%s\007&#39; &quot;xft:Terminus:pixelsize=20&quot;</code>  </p>
+
+<p>でフォントサイズが変えられるとのこと。
+<br><br></p>
+
+<p>~/.Xdefaultsに
+<code>urxvt.keysym.C-0: command ...</code>
+を追記したら動きはしたけど「+1px」とかは出来そうになかったのでシェルスクリプトを書く。<br>
+<font size=2>urxvtのフォントサイズを拾える変数とかあったりしないのかな?</font></p>
+
+<p>~/bin/urxvt-font</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="True-1"></a><span class="lineno">1</span> <span class="c">#!/bin/sh</span>
+<a name="True-2"></a><span class="lineno">2</span> <span class="nb">printf</span> <span class="s1">&#39;\33]50;%s\007&#39;</span> <span class="s2">&quot;xft:Ricty:Bold:antialias=true:size=$1&quot;</span>
+</code></pre></div>
+<p>これで</p>
+
+<p><code>$ urxvt-font 10</code></p>
+
+<p>とかで好きなフォントサイズに変えられるように。やったね。<br>
+<br></p>
+
+<p>ちなみに</p>
+
+<p><code>$ urxvt -fn xft:Ricty:pixelsize=10</code>  </p>
+
+<p>とかオプション付けると指定したフォントで新しく開けるみたい。</p>
+
+                <span class="post-meta"style="margin-left: 0.5em">#ArchLinux</span>
+
+            </div>
+            
+
+            <h2>
                 <a class="post-link" href="/2016/04/13/ibus-mozc-fixed.html">ibus-mozcの初期入力モードを「ひらがな」にする。 </a>
             </h2>
             <span class="post-meta" style="margin-left: 0.5em">Apr 13, 2016</span>
