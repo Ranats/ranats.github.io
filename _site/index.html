@@ -44,6 +44,61 @@
             
 
             <h2>
+                <a class="post-link" href="/2016/04/18/setup_printer.html">ネットワークプリンタを設定した話 </a>
+            </h2>
+            <span class="post-meta" style="margin-left: 0.5em">Apr 18, 2016</span>
+
+            <div class="post-content" style="border: ridge;padding: 1em;margin-bottom: 2em">
+                <!--<p>プリンタの検出どうすんのってなったので覚え書き。<br>
+プリンタの型番はCanon MG 4230だった。
+<br>
+<br></p>
+-->
+                <p>プリンタの検出どうすんのってなったので覚え書き。<br>
+プリンタの型番はCanon MG 4230だった。
+<br>
+<br></p>
+
+<p>CUPSをインストールする。Common Unix Printing Systemの略らしい。</p>
+
+<p><code>$ yaourt -S cups, libcups</code></p>
+
+<p>プリンタのドライバをインストールする。</p>
+
+<p><code>$ yaourt -S cnijfilter-mg4200</code></p>
+
+<p>CUPSを再起動する。</p>
+
+<p><code>$ systemctl restart org.cupsd.service</code></p>
+
+<p>プリンタのMACアドレスを調べる。</p>
+
+<p><code>$ cnijnetprn --installer --search auto</code></p>
+
+<p><code>network cnijnet:/18-0C-AC-0C-CB-0E &quot;Canon MG4200 series&quot; ...</code></p>
+
+<p>CUPSにMG4200LANという名前で登録する。</p>
+
+<p><code>$ sudo /usr/sbin/lpadmin -p MG4200LAN -m canonmg4200.ppd -v cnijnet:/18-0C-AC-0C-CB-0E -E</code></p>
+
+<p>プリンタ設定からプリンタが見える。</p>
+
+<div class='inpic' style="margin-top:-20px;margin-bottom:-20px">
+<img src="/images/print.png" width=100%/>
+</div>
+
+<p>デフォルトのプリンタに設定する。</p>
+
+<p><code>$ sudo /usr/sbin/lpadmin -d MG4200LAN</code></p>
+
+<p>印刷できた。わーい。</p>
+
+                <span class="post-meta"style="margin-left: 0.5em">#ArchLinux</span>
+
+            </div>
+            
+
+            <h2>
                 <a class="post-link" href="/2016/04/14/urxvt-fontsize.html">urxvtのフォントサイズを動的に変える話 </a>
             </h2>
             <span class="post-meta" style="margin-left: 0.5em">Apr 14, 2016</span>
@@ -294,91 +349,15 @@ Foxit-Reader が読みやすい気がした。</p>
 
             </div>
             
-
-            <h2>
-                <a class="post-link" href="/2016/03/30/summarize-the-argument-in-ruby.html">引数をまとめて渡す | Ruby </a>
-            </h2>
-            <span class="post-meta" style="margin-left: 0.5em">Mar 30, 2016</span>
-
-            <div class="post-content" style="border: ridge;padding: 1em;margin-bottom: 2em">
-                <!--<p>組み合わせを作る時に悩んだので覚え書き。
-<br></p>
--->
-                <p>組み合わせを作る時に悩んだので覚え書き。
-<br></p>
-
-<h4>productメソッド(Array)</h4>
-
-<p><code>array.product(other_array, ...)</code></p>
-
-<p><a href="http://ref.xaio.jp/ruby/classes/array/product">product (Array) - Rubyリファレンス</a></p>
-
-<p><br></p>
-
-<h4>問題：</h4>
-
-<p>複数の入力があり、データベースから当てはまる要素をもつ配列をそれぞれ生成し、
-それらの配列から組み合わせを生成する。</p>
-
-<p>入力の数が3つ、とかの時に</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><a name="True-1"></a><span class="lineno">1</span> <span class="n">requests</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span><span class="s2">&quot;baz&quot;</span><span class="o">]</span>
-<a name="True-2"></a><span class="lineno">2</span> <span class="n">array</span> <span class="o">=</span> <span class="o">[]</span>
-<a name="True-3"></a><span class="lineno">3</span> <span class="n">requests</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">request</span><span class="o">|</span>
-<a name="True-4"></a><span class="lineno">4</span>     <span class="n">array</span> <span class="o">&lt;&lt;</span> <span class="no">DB</span><span class="o">.</span><span class="n">collect</span><span class="p">{</span><span class="o">|</span><span class="n">item</span><span class="o">|</span> <span class="n">item</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="n">request</span><span class="p">)}</span>
-<a name="True-5"></a><span class="lineno">5</span> <span class="k">end</span>
-<a name="True-6"></a><span class="lineno">6</span> <span class="n">array</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="n">product</span><span class="p">(</span><span class="n">array</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">,</span><span class="n">array</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">)</span>
-</code></pre></div>
-<p>みたいな感じで書いてた。</p>
-
-<p>ばってん入力の数を可変にしようと思ったときに、productの引数どうしよう。ってなった。</p>
-
-<p>調べてみると splat展開 とやらが使えそう。</p>
-
-<p><code>[*0...5]   #=&gt; [0, 1, 2, 3, 4]</code></p>
-
-<p><code>[*&#39;abcde&#39;] #=&gt; [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;]</code></p>
-
-<p>つまり</p>
-
-<p><code>[*Array.new(3){|i| Array.new(2){|j| (i*2)+j}}] #=&gt; [[0,1], [2,3], [4,5]]</code></p>
-
-<p>ということで最初のコードを書き直してみる。</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><a name="True-1"></a><span class="lineno">1</span> <span class="n">requests</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span><span class="s2">&quot;baz&quot;</span><span class="p">,</span> <span class="o">.</span><span class="n">.</span><span class="o">.</span> <span class="o">]</span>
-<a name="True-2"></a><span class="lineno">2</span> <span class="n">array</span> <span class="o">=</span> <span class="o">[]</span>
-<a name="True-3"></a><span class="lineno">3</span> <span class="n">requests</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">request</span><span class="o">|</span>
-<a name="True-4"></a><span class="lineno">4</span>     <span class="n">array</span> <span class="o">&lt;&lt;</span> <span class="no">DB</span><span class="o">.</span><span class="n">collect</span><span class="p">{</span><span class="o">|</span><span class="n">item</span><span class="o">|</span> <span class="n">item</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="n">request</span><span class="p">)}</span>
-<a name="True-5"></a><span class="lineno">5</span> <span class="k">end</span>
-<a name="True-6"></a><span class="lineno">6</span> 
-<a name="True-7"></a><span class="lineno">7</span> <span class="n">head</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">shift</span>
-<a name="True-8"></a><span class="lineno">8</span> <span class="n">head</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="o">*</span><span class="n">array</span><span class="p">)</span>
-</code></pre></div>
-<p>やったね！</p>
-
-<p>そもそももっとスマートに組み合わせ作れるよって意見もあると思うけど、覚え書きという事でひとつ…
-<p style="font-size: 0.8em;">こういう書き方あるよってのがあればリプライ投げつけてください。</p></p>
-
-<h4>参考</h4>
-
-<ul>
-<li>ここまで出来る！RubyのSplat Operatorまとめ - RailsとRubyとVimのブログ
-<a href="http://alpaca.tc/blog/ruby/how-to-use-star.html">http://alpaca.tc/blog/ruby/how-to-use-star.html</a></li>
-<li>splat での Array 式展開 - Qiita
-<a href="http://qiita.com/hotchpotch/items/4228405cb0edc734fac3">http://qiita.com/hotchpotch/items/4228405cb0edc734fac3</a></li>
-</ul>
-
-                <span class="post-meta"style="margin-left: 0.5em">#Algorithm</span>
-
-            </div>
-            
         </ul>
 
         <div class="pagination" align="center">
             
             <span class="previous">Previous</span>
             
-            <span class="page_number ">Page: 1 of 1</span>
+            <span class="page_number ">Page: 1 of 2</span>
             
-            <span class="next ">Next</span>
+            <a href="/blog/page2" class="next ">Next</a>
             
         </div>
 

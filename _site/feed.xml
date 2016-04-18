@@ -4,11 +4,67 @@
   <description>覚え書きブログ - グラサージュ</description>
   <link href="http://ranats.github.io"/>
   <atom:link href="http://ranats.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-  <updated>2016-04-14 20:08:49 +0900</updated>
+  <updated>2016-04-18 19:44:18 +0900</updated>
   <id>http://ranats.github.io</id>
   <author>
     <name>Ranats</name>
   </author>
+  
+  <entry>
+    <title>ネットワークプリンタを設定した話</title>
+    <id>http://ranats.github.io/2016/04/18/setup_printer.html</id>
+    
+    <summary>&lt;p&gt;プリンタの検出どうすんのってなったので覚え書き。&lt;br&gt;
+プリンタの型番はCanon MG 4230だった。
+&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+</summary>
+
+    <content type="html">&lt;p&gt;プリンタの検出どうすんのってなったので覚え書き。&lt;br&gt;
+プリンタの型番はCanon MG 4230だった。
+&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;CUPSをインストールする。Common Unix Printing Systemの略らしい。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ yaourt -S cups, libcups&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;プリンタのドライバをインストールする。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ yaourt -S cnijfilter-mg4200&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;CUPSを再起動する。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ systemctl restart org.cupsd.service&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;プリンタのMACアドレスを調べる。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ cnijnetprn --installer --search auto&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;network cnijnet:/18-0C-AC-0C-CB-0E &amp;quot;Canon MG4200 series&amp;quot; ...&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;CUPSにMG4200LANという名前で登録する。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ sudo /usr/sbin/lpadmin -p MG4200LAN -m canonmg4200.ppd -v cnijnet:/18-0C-AC-0C-CB-0E -E&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;プリンタ設定からプリンタが見える。&lt;/p&gt;
+
+&lt;div class=&#39;inpic&#39; style=&quot;margin-top:-20px;margin-bottom:-20px&quot;&gt;
+&lt;img src=&quot;/images/print.png&quot; width=100%/&gt;
+&lt;/div&gt;
+
+&lt;p&gt;デフォルトのプリンタに設定する。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ sudo /usr/sbin/lpadmin -d MG4200LAN&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;印刷できた。わーい。&lt;/p&gt;
+</content>
+
+    <updated>2016-04-18 00:00:00 +0900</updated>
+    <link href="http://ranats.github.io/2016/04/18/setup_printer.html"/>
+    <guid isPermaLink="true">http://ranats.github.io/2016/04/18/setup_printer.html</guid>
+    <category term="ArchLinux"/>
+  </entry>
   
   <entry>
     <title>urxvtのフォントサイズを動的に変える話</title>

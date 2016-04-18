@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/syntax.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/genericons.css">
     <link rel="alternate" type="application/atom+xml" title="Glasse-age" href="/feed.xml"/>
-    <title>Glasse-age</title>
+    <title> ネットワークプリンタを設定した話 | Glasse-age</title>
 </head>
 
 <body>
@@ -38,23 +38,49 @@
         <div id="main_content_wrap" class="outer">
             <section id="main_content" class="inner">
 
-                        <ol>
-            <h2 class="post-title" itemprop="name headline">引数をまとめて渡す | Ruby</h2>
-            <span class="post-meta"style="margin-left: 0.5em">Apr 4, 2016</span>
+                            <h2 class="post-title" itemprop="name headline">ネットワークプリンタを設定した話</h2>
+            <span class="post-meta"style="margin-left: 0.5em">Apr 18, 2016</span>
             <div class="post-content" style="border: ridge;padding: 1em;margin-bottom: 2em">
-                <p>ntfsなボリュームに書き込みが出来なかったので覚え書き。
+                <p>プリンタの検出どうすんのってなったので覚え書き。<br>
+プリンタの型番はCanon MG 4230だった。
+<br>
 <br></p>
 
-<h4>参考</h4>
+<p>CUPSをインストールする。Common Unix Printing Systemの略らしい。</p>
 
-<ul>
-<li>NTFS-3G - ArchWiki
-<a href="https://wiki.archlinuxjp.org/index.php/NTFS-3G">https://wiki.archlinuxjp.org/index.php/NTFS-3G</a></li>
-<li>LinuxでNTFSのHDDをマウントする - 犬も歩けば棒も歩く
-<a href="http://d.hatena.ne.jp/prime503/20091024/1256344170">http://d.hatena.ne.jp/prime503/20091024/1256344170</a></li>
-</ul>
+<p><code>$ yaourt -S cups, libcups</code></p>
 
-                <span class="post-meta"style="margin-left: 0.5em">#Algorithm</span>
+<p>プリンタのドライバをインストールする。</p>
+
+<p><code>$ yaourt -S cnijfilter-mg4200</code></p>
+
+<p>CUPSを再起動する。</p>
+
+<p><code>$ systemctl restart org.cupsd.service</code></p>
+
+<p>プリンタのMACアドレスを調べる。</p>
+
+<p><code>$ cnijnetprn --installer --search auto</code></p>
+
+<p><code>network cnijnet:/18-0C-AC-0C-CB-0E &quot;Canon MG4200 series&quot; ...</code></p>
+
+<p>CUPSにMG4200LANという名前で登録する。</p>
+
+<p><code>$ sudo /usr/sbin/lpadmin -p MG4200LAN -m canonmg4200.ppd -v cnijnet:/18-0C-AC-0C-CB-0E -E</code></p>
+
+<p>プリンタ設定からプリンタが見える。</p>
+
+<div class='inpic' style="margin-top:-20px;margin-bottom:-20px">
+<img src="/images/print.png" width=100%/>
+</div>
+
+<p>デフォルトのプリンタに設定する。</p>
+
+<p><code>$ sudo /usr/sbin/lpadmin -d MG4200LAN</code></p>
+
+<p>印刷できた。わーい。</p>
+
+                <span class="post-meta"style="margin-left: 0.5em">#ArchLinux</span>
 
             </div>
 
@@ -62,19 +88,18 @@
             <hr>
         
         <nav style="margin-bottom: 3em;">
-            <div align="right" style="float:left;margin: auto auto">
-            
-                Next<br>
-            &lt;&lt; <a href="/2016/04/04/pdf-viewer-on-linux.html">PDFを読みたい</a>
+            <div align="right" style="float:left;margin: auto auto;width: 40%">
             
             </div>
-            <div align="left" style="float:right;margin: auto auto">
+            <div align="left" style="float:right;margin: auto auto;width: 40%">
             
-                Previous<br>
-            <a href="/2016/03/30/summarize-the-argument-in-ruby.html">引数をまとめて渡す | Ruby</a> &gt;&gt;
+                <a href="/2016/04/14/urxvt-fontsize.html">
+                    Previous<br>
+                    urxvtのフォントサイズを動的に変える話 &gt;&gt;
+                </a>
             
             </div>
-        </nav></ol>
+        </nav>
         <div style="clear:both"></div>
 
 
