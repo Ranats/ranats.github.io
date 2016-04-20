@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/syntax.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/genericons.css">
     <link rel="alternate" type="application/atom+xml" title="Glasse-age" href="/feed.xml"/>
-    <title> ibus-mozcの初期入力モードを「ひらがな」にする。 | Glasse-age</title>
+    <title> 追記：ibus-mozcの初期入力モードを「ひらがな」にする。 | Glasse-age</title>
 </head>
 
 <body>
@@ -38,7 +38,7 @@
         <div id="main_content_wrap" class="outer">
             <section id="main_content" class="inner">
 
-                            <h2 class="post-title" itemprop="name headline">ibus-mozcの初期入力モードを「ひらがな」にする。</h2>
+                            <h2 class="post-title" itemprop="name headline">追記：ibus-mozcの初期入力モードを「ひらがな」にする。</h2>
             <span class="post-meta"style="margin-left: 0.5em">Apr 13, 2016</span>
             <div class="post-content" style="border: ridge;padding: 1em;margin-bottom: 2em">
                 <p>ibus-mozc、起動後の初期入力モードが「直接入力」になっていて、
@@ -80,6 +80,42 @@
 </code></pre></div>
 <p><br>
 再ログイン後入力メソッドを切り替えると、ちゃんと「ひらがな」入力が初期モードに設定されてる。</p>
+
+<p><br>
+<br></p>
+
+<h2>追記</h2>
+
+<p>薄々気づいてはいたけど、なんか実はうまく行ってなかったっぽい</p>
+
+<p>Mozcのリポジトリ(<a href="https://github.com/google/mozc">https://github.com/google/mozc</a>) をforkして、上記ファイル(property_handler.cc)を編集。</p>
+
+<p>PKGBUILDを編集してソースをForkしたリポジトリに変更する。</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="True-1"></a><span class="lineno">1</span> $ vim PKGBUILD
+<a name="True-2"></a><span class="lineno">2</span> ...
+<a name="True-3"></a><span class="lineno">3</span> source=(
+<a name="True-4"></a><span class="lineno">4</span>     mozc::git+https://github.com/Ranats/mozc.git
+<a name="True-5"></a><span class="lineno">5</span>     http://...
+<a name="True-6"></a><span class="lineno">6</span>     http://...
+<a name="True-7"></a><span class="lineno">7</span> )
+<a name="True-8"></a><span class="lineno">8</span> ...
+</code></pre></div>
+<p>ibus-mozcがインストールしてある場合はアンインストール後、
+makepkg してビルド。</p>
+
+<p><br></p>
+
+<p>...なんかエラー出たけど一緒に生成されてた mozc -&gt; ibus-mozc の順番でインストールしたら入った。<br>
+<br></p>
+
+<p>再起動して起動時から「ひらがな」が選択されてるのを確認。ﾔｯﾀｰ</p>
+
+<p><br></p>
+
+<h4>まとめ</h4>
+
+<p>makepkg に関して<s>よく</s>まったく理解してなかった。
+<br><br></p>
 
 <h4>参考</h4>
 

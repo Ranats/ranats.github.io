@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ibus-mozcの初期入力モードを「ひらがな」にする。
+title: 追記：ibus-mozcの初期入力モードを「ひらがな」にする。
 tag: ArchLinux
 ---
 
@@ -52,6 +52,42 @@ $ yaourt -U ibus-mozc-2.17.2313.102-1-x86_64.pkg.tar.xz
 
 <br>
 再ログイン後入力メソッドを切り替えると、ちゃんと「ひらがな」入力が初期モードに設定されてる。
+
+<br>
+<br>
+
+## 追記
+薄々気づいてはいたけど、なんか実はうまく行ってなかったっぽい
+
+Mozcのリポジトリ(https://github.com/google/mozc) をforkして、上記ファイル(property_handler.cc)を編集。
+
+PKGBUILDを編集してソースをForkしたリポジトリに変更する。
+
+```
+$ vim PKGBUILD
+...
+source=(
+	mozc::git+https://github.com/Ranats/mozc.git
+    http://...
+    http://...
+)
+...
+```
+
+ibus-mozcがインストールしてある場合はアンインストール後、
+makepkg してビルド。
+
+<br>
+
+...なんかエラー出たけど一緒に生成されてた mozc -> ibus-mozc の順番でインストールしたら入った。  
+<br>
+
+再起動して起動時から「ひらがな」が選択されてるのを確認。ﾔｯﾀｰ
+
+<br>
+#### まとめ
+makepkg に関して<s>よく</s>まったく理解してなかった。
+<br><br>
 
 #### 参考
 - ibus-mozc の初期モードを「ひらがな」入力にする | uvirt.com https://www.uvirt.com/wp1/20141026-134

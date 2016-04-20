@@ -4,7 +4,7 @@
   <description>覚え書きブログ - グラサージュ</description>
   <link href="http://ranats.github.io"/>
   <atom:link href="http://ranats.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-  <updated>2016-04-18 19:44:18 +0900</updated>
+  <updated>2016-04-20 20:28:05 +0900</updated>
   <id>http://ranats.github.io</id>
   <author>
     <name>Ranats</name>
@@ -119,7 +119,7 @@
   </entry>
   
   <entry>
-    <title>ibus-mozcの初期入力モードを「ひらがな」にする。</title>
+    <title>追記：ibus-mozcの初期入力モードを「ひらがな」にする。</title>
     <id>http://ranats.github.io/2016/04/13/ibus-mozc-fixed.html</id>
     
     <summary>&lt;p&gt;ibus-mozc、起動後の初期入力モードが「直接入力」になっていて、
@@ -167,6 +167,42 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;br&gt;
 再ログイン後入力メソッドを切り替えると、ちゃんと「ひらがな」入力が初期モードに設定されてる。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+
+&lt;h2&gt;追記&lt;/h2&gt;
+
+&lt;p&gt;薄々気づいてはいたけど、なんか実はうまく行ってなかったっぽい&lt;/p&gt;
+
+&lt;p&gt;Mozcのリポジトリ(&lt;a href=&quot;https://github.com/google/mozc&quot;&gt;https://github.com/google/mozc&lt;/a&gt;) をforkして、上記ファイル(property_handler.cc)を編集。&lt;/p&gt;
+
+&lt;p&gt;PKGBUILDを編集してソースをForkしたリポジトリに変更する。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;True-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt; $ vim PKGBUILD
+&lt;a name=&quot;True-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;2&lt;/span&gt; ...
+&lt;a name=&quot;True-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;3&lt;/span&gt; source=(
+&lt;a name=&quot;True-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;4&lt;/span&gt;     mozc::git+https://github.com/Ranats/mozc.git
+&lt;a name=&quot;True-5&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;5&lt;/span&gt;     http://...
+&lt;a name=&quot;True-6&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;6&lt;/span&gt;     http://...
+&lt;a name=&quot;True-7&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;7&lt;/span&gt; )
+&lt;a name=&quot;True-8&quot;&gt;&lt;/a&gt;&lt;span class=&quot;lineno&quot;&gt;8&lt;/span&gt; ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ibus-mozcがインストールしてある場合はアンインストール後、
+makepkg してビルド。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;...なんかエラー出たけど一緒に生成されてた mozc -&amp;gt; ibus-mozc の順番でインストールしたら入った。&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;再起動して起動時から「ひらがな」が選択されてるのを確認。ﾔｯﾀｰ&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h4&gt;まとめ&lt;/h4&gt;
+
+&lt;p&gt;makepkg に関して&lt;s&gt;よく&lt;/s&gt;まったく理解してなかった。
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;h4&gt;参考&lt;/h4&gt;
 
