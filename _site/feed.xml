@@ -4,7 +4,11 @@
   <description>覚え書きブログ - グラサージュ</description>
   <link href="http://ranats.github.io"/>
   <atom:link href="http://ranats.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-  <updated>2016-04-22 10:04:04 +0900</updated>
+<<<<<<< HEAD
+  <updated>2016-05-16 18:13:52 +0900</updated>
+=======
+  <updated>2016-04-29 01:48:17 +0900</updated>
+>>>>>>> 11690329e0d63b545bd8d86c4d0ce1eaf737f288
   <id>http://ranats.github.io</id>
   <author>
     <name>Ranats</name>
