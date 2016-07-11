@@ -48,10 +48,11 @@ title: about
 	- ゆゆ式
 - テトリス
 	- ぷよぷよテトリスで対人をはじめた。
-	- 40line -> 01:14 (tetris friends)
-	- LPM?
+	- 40line -> 01:11
 - WoT
-    - イギリスTier.7か8駆逐辺りまでやってた
+    - http://worldoftanks.asia/ja/community/accounts/2004239834-Ranats/
+    - イギリス駆逐ATルートはいいぞ
+    - イベントとフレンドに乗ってアメリカ重戦車でレーティングを溶かしている
 - 音ゲーマー(よわい)
 	- BeatmaniaIIDX (5段)
 	- pop'n music (30くらい)
