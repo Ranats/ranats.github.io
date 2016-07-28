@@ -23,6 +23,7 @@ title: about
     - Sinatra
     - nokogiri / mechanize
     - ... on Rails
+	- Kurosawa
 - GA
 - スクレイピング/クローラ
 - Oculus DK2
@@ -31,7 +32,7 @@ title: about
 
 #### PC
 - msi GE40 DragonEyes
-	- ArchLinux / Windows 8.1
+	- ArchLinux / Windows 10
 - FMV Lifebook AH77/J
 	- ArchLinux
 	- 使ってない
@@ -54,13 +55,14 @@ title: about
     - イギリス駆逐ATルートはいいぞ
     - イベントとフレンドに乗ってアメリカ重戦車でレーティングを溶かしている
 - 音ゲーマー(よわい)
-	- BeatmaniaIIDX (5段)
+	- BeatmaniaIIDX (6段)
 	- pop'n music (30くらい)
 	- DJ MAX
 - 犬猫
     - かわいい
 - 回鍋肉
     - おいしい
+- がんばルビィ！
 
 #### どこ
 - 神奈川 ときどき 福岡

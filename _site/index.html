@@ -44,6 +44,97 @@
             
 
             <h2>
+                <a class="post-link" href="/2016/07/27/heroku_on_windows.html">Windows上にHerokuをセットアップ </a>
+            </h2>
+            <span class="post-meta" style="margin-left: 0.5em">Jul 27, 2016</span>
+
+            <div class="post-content" style="border: ridge;padding: 1em;margin-bottom: 2em">
+                <!--<p>どうも.<br>
+　家に居たらブーバーが出てきたのでボール投げたら逃げられました.らなとすです.</p>
+-->
+                <p>どうも.<br>
+　家に居たらブーバーが出てきたのでボール投げたら逃げられました.らなとすです.</p>
+
+<p>久々にHeroku触ったので覚え書き.</p>
+
+<p>Git、及びRubyはインストール済みのものとする.</p>
+
+<hr>
+
+<ol>
+<li><p>Heroku Toolbeltをインストール</p>
+
+<p><a href="https://toolbelt.heroku.com/">https://toolbelt.heroku.com/</a></p></li>
+<li><p>以下、リポジトリを置きたいディレクトリ内での作業</p></li>
+<li><p>Herokuにログイン</p>
+
+<p><code>$heroku login</code></p></li>
+<li><p>Herokuアプリケーションを作成</p>
+
+<p><code>$heroku apps:create &lt;app-name&gt;</code></p></li>
+<li><p>作成したアプリケーションのリポジトリをクローン</p>
+
+<p><code>$git clone git@heroku.com:&lt;app-name&gt;.git</code></p>
+
+<p>リポジトリ名でディレクトリが作成される.</p>
+
+<p>現在のディレクトリに展開して欲しい場合はピリオドで現ディレクトリを指定する.</p>
+
+<p><code>$git clone git@heroku.com:&lt;app-name&gt;.git .</code></p>
+
+<p>(Permission denied (publickey) で怒られた場合はHerokuに公開鍵を登録.</p>
+
+<p><code>$heroku keys:add</code>)</p></li>
+<li><p>中身を用意</p>
+
+<p>とりあえずのsinatra</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><a name="True-1"></a><span class="lineno">1</span> <span class="c1">#app.rb</span>
+<a name="True-2"></a><span class="lineno">2</span> <span class="nb">require</span> <span class="s2">&quot;sinatra&quot;</span>
+<a name="True-3"></a><span class="lineno">3</span> 
+<a name="True-4"></a><span class="lineno">4</span> <span class="n">get</span> <span class="s2">&quot;/&quot;</span> <span class="k">do</span>
+<a name="True-5"></a><span class="lineno">5</span>     <span class="s2">&quot;Hello world!&quot;</span>
+<a name="True-6"></a><span class="lineno">6</span> <span class="k">end</span>
+</code></pre></div>
+<hr>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><a name="True-1"></a><span class="lineno">1</span> <span class="c1">#config.ru</span>
+<a name="True-2"></a><span class="lineno">2</span> <span class="nb">require</span> <span class="s2">&quot;./app&quot;</span>
+<a name="True-3"></a><span class="lineno">3</span> <span class="n">run</span> <span class="no">Sinatra</span><span class="o">::</span><span class="no">Application</span>
+</code></pre></div>
+<hr>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><a name="True-1"></a><span class="lineno">1</span> <span class="c1">#Gemfile</span>
+<a name="True-2"></a><span class="lineno">2</span> <span class="n">source</span> <span class="s2">&quot;https://rubygems.org&quot;</span>
+<a name="True-3"></a><span class="lineno">3</span> <span class="n">gem</span> <span class="s2">&quot;sinatra&quot;</span>
+</code></pre></div></li>
+<li><p>コミット</p>
+
+<p>お好きに.</p></li>
+<li><p>.git/configを編集</p>
+
+<p>Herokuからcloneすると,「[remote &quot;origin&quot;]」がherokuをターゲットに設定されているらしいので,変更する.</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><a name="True-1"></a><span class="lineno">1</span> <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+<a name="True-2"></a><span class="lineno">2</span> <span class="o">[</span><span class="n">remote</span> <span class="s2">&quot;heroku&quot;</span><span class="o">]</span>
+<a name="True-3"></a><span class="lineno">3</span>     <span class="n">url</span> <span class="o">=</span> <span class="n">git</span><span class="vi">@heroku</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="o">.</span><span class="n">.</span><span class="o">.</span>
+<a name="True-4"></a><span class="lineno">4</span>     <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</code></pre></div></li>
+<li><p>デプロイ</p>
+
+<p><code>$git push heroku master</code></p></li>
+</ol>
+
+<hr>
+
+<p>参考</p>
+
+<ul>
+<li>WindowsでHerokuをセットアップする手順 · GitHub : <a href="https://gist.github.com/weed/4192953">https://gist.github.com/weed/4192953</a></li>
+</ul>
+
+                <span class="post-meta"style="margin-left: 0.5em">#Heroku</span>
+
+            </div>
+            
+
+            <h2>
                 <a class="post-link" href="/2016/04/18/setup_printer.html">ネットワークプリンタを設定した話 </a>
             </h2>
             <span class="post-meta" style="margin-left: 0.5em">Apr 18, 2016</span>
@@ -294,92 +385,6 @@ makepkg してビルド。</p>
 <li>LinuxでNTFSのHDDをマウントする - 犬も歩けば棒も歩く
 <a href="http://d.hatena.ne.jp/prime503/20091024/1256344170">http://d.hatena.ne.jp/prime503/20091024/1256344170</a></li>
 </ul>
-
-                <span class="post-meta"style="margin-left: 0.5em">#ArchLinux</span>
-
-            </div>
-            
-
-            <h2>
-                <a class="post-link" href="/2016/04/04/pdf-viewer-on-linux.html">PDFを読みたい </a>
-            </h2>
-            <span class="post-meta" style="margin-left: 0.5em">Apr 4, 2016</span>
-
-            <div class="post-content" style="border: ridge;padding: 1em;margin-bottom: 2em">
-                <!--<div style="padding-left:25%">
-<h3> What's new </h3>
-<h3> おうちの複合機がこわれた </h3>
-</div>
--->
-                <div style="padding-left:25%">
-<h3> What's new </h3>
-<h3> おうちの複合機がこわれた </h3>
-</div>
-
-<p>インクホルダがホールドしてくれなかったり白紙吐いたりしたので、PDFを外で印刷する前にラクガキしながら読めるアプリが欲しかった。
-<br></p>
-
-<h4>要求</h4>
-
-<ol>
-<li>読みやすい</li>
-<li>マーカーが引ける</li>
-<li>コメント/メモを日本語で入れられる。</li>
-</ol>
-
-<h5>1.Okular <font size=2>- <a href="https://okular.kde.org/">link</a> / <a href="https://aur.archlinux.org/packages/okular-git/">[AUR]</a></font></h5>
-
-<p>最初に見つけたのが「Okular」<br>
-機能的には不便は無かったけどgtkで無いかなーと思う。</p>
-
-<h5>2.Foxit-Reader <font size=2>- <a href="https://www.foxitsoftware.com/products/pdf-reader/">link</a> / <a href="https://aur.archlinux.org/packages/foxitreader/">[AUR]</a></font></h5>
-
-<p>見た目良い感じだったけど、コメントに漢字が使えなかった。<br>
-全部タイプライタでも良いっちゃ良いけども。</p>
-
-<h5>3.PDF-XChange Viewer <font size=2>- <a href="http://www.tracker-software.com/product/pdf-xchange-viewer">link</a> / <a href="https://aur.archlinux.org/packages/pdf-xchange/">[AUR]</a></font></h5>
-
-<p>付箋つけて選択するとなんか落ちる。</p>
-
-<h5>4.LibreOffice Draw <font size=2>- <a href="https://ja.libreoffice.org/discover/draw/">link</a></font></h5>
-
-<p>LibreOfficeで開けるやん、という情報を得る。<br>
-図とかも入れられるし編集には向いてるかもしれないが、「読みやすく」は無かった。<br>
-あと何か重い気がする。</p>
-
-<h5>5.acroread <font size=2>- <a href="https://aur.archlinux.org/packages/acroread/">[AUR]</a></font></h5>
-
-<p>Adobe reader ...なんだろうけど
-なんか日本語が全部「●」になった。<br>
-マーカー等が見当たらなかったのでパス。</p>
-
-<p><br>
-とりあえず機能的には Okular が良い感じだったけど、<br>
-Foxit-Reader が読みやすい気がした。</p>
-
-<p><br></p>
-
-<h5>6.Gloobus preview <font size=2>- <a href="http://gloobus.net/gloobus-preview/">link</a> / <a href="https://www.archlinux.org/packages/community/i686/gloobus-preview/">[AUR]</a></font></h5>
-
-<p>趣旨は違うけど見かけたので入れたら良かった。
-軽量なんでもビューワ?<br>
-メディアも再生してくれる。</p>
-
-<div class='inpic' style="margin-top:-20px;margin-bottom:-20px">
-<img src="/images/gloobus.png" width=100%/>
-</div>
-
-<p>少し透過してるの良い。<br>
-同フォルダ内なら自動で次を再生してくれる。<br>
-キーボードのメディアキーも効いて良い。</p>
-
-<p>アルバム出てるの今更知ったので買ってきました。好き。</p>
-
-<div class="babylink-box" style="width:40%; float:right;overflow: hidden; font-size: small; zoom: 1; margin: 0; text-align: left;"><div class="babylink-image" style="float: left; margin: 0px 15px 10px 0px; width: 75px; height: 75px; text-align: center;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B019I3BHS8/sopurani-22/" rel="nofollow" target="_blank"><img style="border-top: medium none; border-right: medium none; border-bottom: medium none; border-left: medium none;" src="http://ecx.images-amazon.com/images/I/61ZZT-OpUWL._SL75_.jpg" width="75" height="74" /></a></div><div class="babylink-info" style="overflow: hidden; zoom: 1; line-height: 120%;"><div class="babylink-title" style="margin-bottom: 2px; line-height: 120%;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B019I3BHS8/sopurani-22/" rel="nofollow" target="_blank">The World's On Fire</a></div><div class="babylink-manufacturer" style="margin-bottom: 5px;">MAN WITH A MISSION</div></div>￥2,592 ~ ￥3,024
-<br><a href="https://www.amazon.co.jp/gp/aws/cart/add.html?SubscriptionId=D68HUNXKLHS4J&AssociateTag=sopurani-22&ASIN.1=B019I3BBOS&Quantity.1=1&adid=1Z980W1RS9Z24SWPJBN9&linkCode=as4&OfferListingId.1=HuKtsvfLvvu3p%252FOCpeU3ZM8%252FkhbHuUKXneSZzqvA4cCIM%252BZUJsLpqZ1OnghT%252F91Z7MUyrjjaNt%252BKtCvkfXe69NwM47hXiV%252FR1ZEq5EPloLpXr1d1P3XcOJgH2RZMs%252FNBczm4R9ssdr4YFJtzEpxudw%253D%253D&submit.add.x=57&submit.add.y=16&submit.add=Amazon.co.jp%E3%81%A7%E8%B2%B7%E3%81%86" rel="nofollow" target="_blank"><img style="border-top: medium none; border-right: medium none; border-bottom: medium none; border-left: medium none;" src="https://images-na.ssl-images-amazon.com/images/G/09/buttons/buy-from-tan.gif" /></a>
-<div class="booklink-footer" style="clear: left"></div></div>
-
-<p><BR clear="all"></p>
 
                 <span class="post-meta"style="margin-left: 0.5em">#ArchLinux</span>
 

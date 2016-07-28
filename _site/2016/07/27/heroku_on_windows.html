@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Ranats.GitHub.io : ">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/syntax.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/genericons.css">
+    <link rel="alternate" type="application/atom+xml" title="Glasse-age" href="/feed.xml"/>
+    <title> Windows上にHerokuをセットアップ | Glasse-age</title>
+</head>
+
+<body>
+<!-- HEADER -->
+<div id="header_wrap" class="outer">
+    <header class="inner" style="padding-bottom: 1%">
+        <a id="forkme_banner" href="https://github.com/Ranats/jekyll">View on GitHub</a>
+
+        <h1 id="project_title"><a href=http://ranats.github.io>Glasse-age</a></h1>
+        <h2 id="project_tagline" style="font-size: 1em">ぐらさーじゅ</h2>
+        <br>
+        <div style="word-spacing: 1em" align="right">
+            <span class="genericon genericon-home" style="color: white;font-size: 1.5em"><a href='/'>home</a></span>
+            <span class="genericon genericon-user" style="color: white;font-size: 1.5em"><a
+                    href='/about'>about</a></span>
+            <span class="genericon genericon-feed" style="color: white;font-size: 1.5em"><a
+                    href='/feed.xml'>feed</a></span>
+        </div>
+    </header>
+</div>
+
+
+<div class="page-content">
+    <div class="wrapper">
+        <div id="main_content_wrap" class="outer">
+            <section id="main_content" class="inner">
+
+                            <h2 class="post-title" itemprop="name headline">Windows上にHerokuをセットアップ</h2>
+            <span class="post-meta"style="margin-left: 0.5em">Jul 27, 2016</span>
+            <div class="post-content" style="border: ridge;padding: 1em;margin-bottom: 2em">
+                <p>どうも.<br>
+　家に居たらブーバーが出てきたのでボール投げたら逃げられました.らなとすです.</p>
+
+<p>久々にHeroku触ったので覚え書き.</p>
+
+<p>Git、及びRubyはインストール済みのものとする.</p>
+
+<hr>
+
+<ol>
+<li><p>Heroku Toolbeltをインストール</p>
+
+<p><a href="https://toolbelt.heroku.com/">https://toolbelt.heroku.com/</a></p></li>
+<li><p>以下、リポジトリを置きたいディレクトリ内での作業</p></li>
+<li><p>Herokuにログイン</p>
+
+<p><code>$heroku login</code></p></li>
+<li><p>Herokuアプリケーションを作成</p>
+
+<p><code>$heroku apps:create &lt;app-name&gt;</code></p></li>
+<li><p>作成したアプリケーションのリポジトリをクローン</p>
+
+<p><code>$git clone git@heroku.com:&lt;app-name&gt;.git</code></p>
+
+<p>リポジトリ名でディレクトリが作成される.</p>
+
+<p>現在のディレクトリに展開して欲しい場合はピリオドで現ディレクトリを指定する.</p>
+
+<p><code>$git clone git@heroku.com:&lt;app-name&gt;.git .</code></p>
+
+<p>(Permission denied (publickey) で怒られた場合はHerokuに公開鍵を登録.</p>
+
+<p><code>$heroku keys:add</code>)</p></li>
+<li><p>中身を用意</p>
+
+<p>とりあえずのsinatra</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><a name="True-1"></a><span class="lineno">1</span> <span class="c1">#app.rb</span>
+<a name="True-2"></a><span class="lineno">2</span> <span class="nb">require</span> <span class="s2">&quot;sinatra&quot;</span>
+<a name="True-3"></a><span class="lineno">3</span> 
+<a name="True-4"></a><span class="lineno">4</span> <span class="n">get</span> <span class="s2">&quot;/&quot;</span> <span class="k">do</span>
+<a name="True-5"></a><span class="lineno">5</span>     <span class="s2">&quot;Hello world!&quot;</span>
+<a name="True-6"></a><span class="lineno">6</span> <span class="k">end</span>
+</code></pre></div>
+<hr>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><a name="True-1"></a><span class="lineno">1</span> <span class="c1">#config.ru</span>
+<a name="True-2"></a><span class="lineno">2</span> <span class="nb">require</span> <span class="s2">&quot;./app&quot;</span>
+<a name="True-3"></a><span class="lineno">3</span> <span class="n">run</span> <span class="no">Sinatra</span><span class="o">::</span><span class="no">Application</span>
+</code></pre></div>
+<hr>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><a name="True-1"></a><span class="lineno">1</span> <span class="c1">#Gemfile</span>
+<a name="True-2"></a><span class="lineno">2</span> <span class="n">source</span> <span class="s2">&quot;https://rubygems.org&quot;</span>
+<a name="True-3"></a><span class="lineno">3</span> <span class="n">gem</span> <span class="s2">&quot;sinatra&quot;</span>
+</code></pre></div></li>
+<li><p>コミット</p>
+
+<p>お好きに.</p></li>
+<li><p>.git/configを編集</p>
+
+<p>Herokuからcloneすると,「[remote &quot;origin&quot;]」がherokuをターゲットに設定されているらしいので,変更する.</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><a name="True-1"></a><span class="lineno">1</span> <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+<a name="True-2"></a><span class="lineno">2</span> <span class="o">[</span><span class="n">remote</span> <span class="s2">&quot;heroku&quot;</span><span class="o">]</span>
+<a name="True-3"></a><span class="lineno">3</span>     <span class="n">url</span> <span class="o">=</span> <span class="n">git</span><span class="vi">@heroku</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="o">.</span><span class="n">.</span><span class="o">.</span>
+<a name="True-4"></a><span class="lineno">4</span>     <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</code></pre></div></li>
+<li><p>デプロイ</p>
+
+<p><code>$git push heroku master</code></p></li>
+</ol>
+
+<hr>
+
+<p>参考</p>
+
+<ul>
+<li>WindowsでHerokuをセットアップする手順 · GitHub : <a href="https://gist.github.com/weed/4192953">https://gist.github.com/weed/4192953</a></li>
+</ul>
+
+                <span class="post-meta"style="margin-left: 0.5em">#Heroku</span>
+
+            </div>
+
+
+            <hr>
+        
+        <nav style="margin-bottom: 3em;">
+            <div align="right" style="float:left;margin: auto auto;width: 40%">
+            
+            </div>
+            <div align="left" style="float:right;margin: auto auto;width: 40%">
+            
+                <a href="/2016/04/18/setup_printer.html">
+                    Previous<br>
+                    ネットワークプリンタを設定した話 &gt;&gt;
+                </a>
+            
+            </div>
+        </nav>
+        <div style="clear:both"></div>
+
+
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER  -->
+<div id="footer_wrap" class="outer">
+    <footer class="inner">
+        <p>© 2016 Ranats</p>
+    </footer>
+</div>
+
+</body>
+
+</html>
