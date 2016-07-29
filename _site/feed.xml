@@ -4,11 +4,73 @@
   <description>覚え書きブログ - グラサージュ</description>
   <link href="http://ranats.github.io"/>
   <atom:link href="http://ranats.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-  <updated>2016-07-29 18:50:12 +0900</updated>
+  <updated>2016-07-30 04:02:10 +0900</updated>
   <id>http://ranats.github.io</id>
   <author>
     <name>Ranats</name>
   </author>
+  
+  <entry>
+    <title>SinatraでActiveRecordでPostgresqlでherokuで</title>
+    <id>http://ranats.github.io/2016/07/30/postgresql_on_heroku.html</id>
+    
+    <summary>&lt;p&gt;よく分かっていないので覚え書き．&lt;/p&gt;
+</summary>
+
+    <content type="html">&lt;p&gt;よく分かっていないので覚え書き．&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;HerokuにPostgresqlのアドオンを入れる&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;% heroku addons:add heroku-postgresql --app &amp;lt;APPNAME&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;コンフィグを確認&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;% heroku config --app &amp;lt;APPNAME&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;[DATABASE_URL] ってのに名前とかがまとめて追加されてる．&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;  psqlを使ってみる&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;% heroku pg:psql&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/0730/port.png&quot; width=100% /&gt;
+　ｱｯﾊｲ(ラボ，というか大学のファイアウォールがﾌｧｲﾔｰしてる)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;参考の記事を参考にわーっと作る．&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;herokuにデプロイする部分で何かタイムアウトしていたので代わりに以下を実行．&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;% heroku run:detached rake db:migrate&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;＜＜＜W I P＞＞＞&lt;/p&gt;
+
+&lt;p&gt;このへん
+SinatraからActiveRecord 3を使う(2) CRUD操作 - アインシュタインの電話番号 : &lt;a href=&quot;http://blog.ruedap.com/2011/04/17/ruby-sinatra-active-record-3-crud&quot;&gt;http://blog.ruedap.com/2011/04/17/ruby-sinatra-active-record-3-crud&lt;/a&gt;
+&lt;a href=&quot;http://blog.ruedap.com/2011/04/18/ruby-sinatra-active-record-3-validate&quot;&gt;http://blog.ruedap.com/2011/04/18/ruby-sinatra-active-record-3-validate&lt;/a&gt;
+&lt;a href=&quot;http://blog.ruedap.com/2011/04/19/ruby-sinatra-active-record-3-meta-where&quot;&gt;http://blog.ruedap.com/2011/04/19/ruby-sinatra-active-record-3-meta-where&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;参考&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;NOT SO BAD / Sinatra✕ActiveRecord✕PostgreSQLでデータベース操作。 : &lt;a href=&quot;http://blog.notsobad.jp/post/60070706766/sinatra-activerecord-postgresql%E3%81%A7%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E6%93%8D%E4%BD%9C&quot;&gt;http://blog.notsobad.jp/post/60070706766/sinatra-activerecord-postgresql%E3%81%A7%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E6%93%8D%E4%BD%9C&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+
+    <updated>2016-07-30 00:00:00 +0900</updated>
+    <link href="http://ranats.github.io/2016/07/30/postgresql_on_heroku.html"/>
+    <guid isPermaLink="true">http://ranats.github.io/2016/07/30/postgresql_on_heroku.html</guid>
+    <category term="Heroku"/>
+  </entry>
   
   <entry>
     <title>Windows上にHerokuをセットアップ</title>

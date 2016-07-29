@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Ranats.GitHub.io : ">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/syntax.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/genericons.css">
+    <link rel="alternate" type="application/atom+xml" title="Glasse-age" href="/feed.xml"/>
+    <title> SinatraでActiveRecordでPostgresqlでherokuで | Glasse-age</title>
+</head>
+
+<body>
+<!-- HEADER -->
+<div id="header_wrap" class="outer">
+    <header class="inner" style="padding-bottom: 1%">
+        <a id="forkme_banner" href="https://github.com/Ranats/jekyll">View on GitHub</a>
+
+        <h1 id="project_title"><a href=http://ranats.github.io>Glasse-age</a></h1>
+        <h2 id="project_tagline" style="font-size: 1em">ぐらさーじゅ</h2>
+        <br>
+        <div style="word-spacing: 1em" align="right">
+            <span class="genericon genericon-home" style="color: white;font-size: 1.5em"><a href='/'>home</a></span>
+            <span class="genericon genericon-user" style="color: white;font-size: 1.5em"><a
+                    href='/about'>about</a></span>
+            <span class="genericon genericon-feed" style="color: white;font-size: 1.5em"><a
+                    href='/feed.xml'>feed</a></span>
+        </div>
+    </header>
+</div>
+
+
+<div class="page-content">
+    <div class="wrapper">
+        <div id="main_content_wrap" class="outer">
+            <section id="main_content" class="inner">
+
+                            <h2 class="post-title" itemprop="name headline">SinatraでActiveRecordでPostgresqlでherokuで</h2>
+            <span class="post-meta"style="margin-left: 0.5em">Jul 30, 2016</span>
+            <div class="post-content" style="border: ridge;padding: 1em;margin-bottom: 2em">
+                <p>よく分かっていないので覚え書き．</p>
+
+<ul>
+<li>HerokuにPostgresqlのアドオンを入れる</li>
+</ul>
+
+<p><code>% heroku addons:add heroku-postgresql --app &lt;APPNAME&gt;</code></p>
+
+<ul>
+<li>コンフィグを確認</li>
+</ul>
+
+<p><code>% heroku config --app &lt;APPNAME&gt;</code></p>
+
+<p>[DATABASE_URL] ってのに名前とかがまとめて追加されてる．</p>
+
+<ul>
+<li>  psqlを使ってみる</li>
+</ul>
+
+<p><code>% heroku pg:psql</code></p>
+
+<p><img src="/images/0730/port.png" width=100% />
+　ｱｯﾊｲ(ラボ，というか大学のファイアウォールがﾌｧｲﾔｰしてる)</p>
+
+<ul>
+<li>参考の記事を参考にわーっと作る．</li>
+</ul>
+
+<p>herokuにデプロイする部分で何かタイムアウトしていたので代わりに以下を実行．</p>
+
+<p><code>% heroku run:detached rake db:migrate</code></p>
+
+<p>＜＜＜W I P＞＞＞</p>
+
+<p>このへん
+SinatraからActiveRecord 3を使う(2) CRUD操作 - アインシュタインの電話番号 : <a href="http://blog.ruedap.com/2011/04/17/ruby-sinatra-active-record-3-crud">http://blog.ruedap.com/2011/04/17/ruby-sinatra-active-record-3-crud</a>
+<a href="http://blog.ruedap.com/2011/04/18/ruby-sinatra-active-record-3-validate">http://blog.ruedap.com/2011/04/18/ruby-sinatra-active-record-3-validate</a>
+<a href="http://blog.ruedap.com/2011/04/19/ruby-sinatra-active-record-3-meta-where">http://blog.ruedap.com/2011/04/19/ruby-sinatra-active-record-3-meta-where</a></p>
+
+<hr>
+
+<p>参考</p>
+
+<ul>
+<li>NOT SO BAD / Sinatra✕ActiveRecord✕PostgreSQLでデータベース操作。 : <a href="http://blog.notsobad.jp/post/60070706766/sinatra-activerecord-postgresql%E3%81%A7%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E6%93%8D%E4%BD%9C">http://blog.notsobad.jp/post/60070706766/sinatra-activerecord-postgresql%E3%81%A7%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E6%93%8D%E4%BD%9C</a></li>
+</ul>
+
+                <span class="post-meta"style="margin-left: 0.5em">#Heroku</span>
+
+            </div>
+
+
+            <hr>
+        
+        <nav style="margin-bottom: 3em;">
+            <div align="right" style="float:left;margin: auto auto;width: 40%">
+            
+            </div>
+            <div align="left" style="float:right;margin: auto auto;width: 40%">
+            
+                <a href="/2016/07/27/heroku_on_windows.html">
+                    Previous<br>
+                    Windows上にHerokuをセットアップ &gt;&gt;
+                </a>
+            
+            </div>
+        </nav>
+        <div style="clear:both"></div>
+
+
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER  -->
+<div id="footer_wrap" class="outer">
+    <footer class="inner">
+        <p>© 2016 Ranats</p>
+    </footer>
+</div>
+
+</body>
+
+</html>

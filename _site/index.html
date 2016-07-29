@@ -44,6 +44,67 @@
             
 
             <h2>
+                <a class="post-link" href="/2016/07/30/postgresql_on_heroku.html">SinatraでActiveRecordでPostgresqlでherokuで </a>
+            </h2>
+            <span class="post-meta" style="margin-left: 0.5em">Jul 30, 2016</span>
+
+            <div class="post-content" style="border: ridge;padding: 1em;margin-bottom: 2em">
+                <!--<p>よく分かっていないので覚え書き．</p>
+-->
+                <p>よく分かっていないので覚え書き．</p>
+
+<ul>
+<li>HerokuにPostgresqlのアドオンを入れる</li>
+</ul>
+
+<p><code>% heroku addons:add heroku-postgresql --app &lt;APPNAME&gt;</code></p>
+
+<ul>
+<li>コンフィグを確認</li>
+</ul>
+
+<p><code>% heroku config --app &lt;APPNAME&gt;</code></p>
+
+<p>[DATABASE_URL] ってのに名前とかがまとめて追加されてる．</p>
+
+<ul>
+<li>  psqlを使ってみる</li>
+</ul>
+
+<p><code>% heroku pg:psql</code></p>
+
+<p><img src="/images/0730/port.png" width=100% />
+　ｱｯﾊｲ(ラボ，というか大学のファイアウォールがﾌｧｲﾔｰしてる)</p>
+
+<ul>
+<li>参考の記事を参考にわーっと作る．</li>
+</ul>
+
+<p>herokuにデプロイする部分で何かタイムアウトしていたので代わりに以下を実行．</p>
+
+<p><code>% heroku run:detached rake db:migrate</code></p>
+
+<p>＜＜＜W I P＞＞＞</p>
+
+<p>このへん
+SinatraからActiveRecord 3を使う(2) CRUD操作 - アインシュタインの電話番号 : <a href="http://blog.ruedap.com/2011/04/17/ruby-sinatra-active-record-3-crud">http://blog.ruedap.com/2011/04/17/ruby-sinatra-active-record-3-crud</a>
+<a href="http://blog.ruedap.com/2011/04/18/ruby-sinatra-active-record-3-validate">http://blog.ruedap.com/2011/04/18/ruby-sinatra-active-record-3-validate</a>
+<a href="http://blog.ruedap.com/2011/04/19/ruby-sinatra-active-record-3-meta-where">http://blog.ruedap.com/2011/04/19/ruby-sinatra-active-record-3-meta-where</a></p>
+
+<hr>
+
+<p>参考</p>
+
+<ul>
+<li>NOT SO BAD / Sinatra✕ActiveRecord✕PostgreSQLでデータベース操作。 : <a href="http://blog.notsobad.jp/post/60070706766/sinatra-activerecord-postgresql%E3%81%A7%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E6%93%8D%E4%BD%9C">http://blog.notsobad.jp/post/60070706766/sinatra-activerecord-postgresql%E3%81%A7%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E6%93%8D%E4%BD%9C</a></li>
+</ul>
+
+                <span class="post-meta"style="margin-left: 0.5em">#Heroku</span>
+
+            </div>
+            
+
+            <h2>
                 <a class="post-link" href="/2016/07/27/heroku_on_windows.html">Windows上にHerokuをセットアップ </a>
             </h2>
             <span class="post-meta" style="margin-left: 0.5em">Jul 27, 2016</span>
@@ -331,59 +392,6 @@ makepkg してビルド。</p>
 
 <ul>
 <li>ibus-mozc の初期モードを「ひらがな」入力にする | uvirt.com <a href="https://www.uvirt.com/wp1/20141026-134">https://www.uvirt.com/wp1/20141026-134</a></li>
-</ul>
-
-                <span class="post-meta"style="margin-left: 0.5em">#ArchLinux</span>
-
-            </div>
-            
-
-            <h2>
-                <a class="post-link" href="/2016/04/05/ntfs-on-linux.html">ntfsなボリュームを読み書きする </a>
-            </h2>
-            <span class="post-meta" style="margin-left: 0.5em">Apr 5, 2016</span>
-
-            <div class="post-content" style="border: ridge;padding: 1em;margin-bottom: 2em">
-                <!--<p>ntfsなボリュームに書き込みが出来なかったので覚え書き。
-<br>
-<br></p>
--->
-                <p>ntfsなボリュームに書き込みが出来なかったので覚え書き。
-<br>
-<br></p>
-
-<p>ちょっとファイルを移そうと思って、ふとコピーしようとした時に、<br>
-「読み込み専用です！」って言われて、</p>
-
-<p><code>$ mount -w /dev/sdaX /mnt/hoge</code></p>
-
-<p>ってしても<code>mount</code>で確認すると<code>(ro, ...</code>になってる。</p>
-
-<p>権限とか所有者、グループとかかなーと思ったけど、
-調べてみると<code>NTFS-3G</code>ってのを入れると良さそう。</p>
-
-<p><code>$ yaourt -S ntfs-3g</code></p>
-
-<p>入れたらマウント。</p>
-
-<p><code>$ mount -t ntfs-3g /dev/sdaX /mount/hoge</code></p>
-
-<p>エンコードだの云々書いてる記事もあったけど、特に指定なしでも以後問題なさそう。</p>
-
-<blockquote>
-<p>Arch ではマウントタイプ ntfs-3g を明示的に指定する必要はありません。ntfs-3g パッケージがインストールされていれば mount コマンドはデフォルトで /usr/bin/ntfs-3g にシンボリックリンクされている /usr/bin/mount.ntfs を使用します。
-<br><a href="https://wiki.archlinuxjp.org/index.php/NTFS-3G#.E6.89.8B.E5.8B.95.E3.83.9E.E3.82.A6.E3.83.B3.E3.83.88">https://wiki.archlinuxjp.org/index.php/NTFS-3G#.E6.89.8B.E5.8B.95.E3.83.9E.E3.82.A6.E3.83.B3.E3.83.88</a></p>
-</blockquote>
-
-<p>との事で、<code>ntfs-3g</code>をインストールしていれば普通に(GUI上のファイルマネージャも)マウントするとやってくれるみたい。</p>
-
-<h4>参考</h4>
-
-<ul>
-<li>NTFS-3G - ArchWiki<br>
-<a href="https://wiki.archlinuxjp.org/index.php/NTFS-3G">https://wiki.archlinuxjp.org/index.php/NTFS-3G</a></li>
-<li>LinuxでNTFSのHDDをマウントする - 犬も歩けば棒も歩く
-<a href="http://d.hatena.ne.jp/prime503/20091024/1256344170">http://d.hatena.ne.jp/prime503/20091024/1256344170</a></li>
 </ul>
 
                 <span class="post-meta"style="margin-left: 0.5em">#ArchLinux</span>
