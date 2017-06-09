@@ -20,11 +20,8 @@ title: about
 
 #### 何
 - Ruby
-    - Sinatra
-    - nokogiri / mechanize
     - ... on Rails
-	- Kurosawa
-- GA
+- GA - GeneticAlgorithm
 - スクレイピング/クローラ
 - Oculus DK2
 - <font size=1.2em>CTF</font>
@@ -33,9 +30,6 @@ title: about
 #### PC
 - msi GE40 DragonEyes
 	- ArchLinux / Windows 10
-- FMV Lifebook AH77/J
-	- ArchLinux
-	- 使ってない
 
 #### 趣味
 - 音楽
@@ -49,21 +43,17 @@ title: about
 	- ゆゆ式
 - テトリス
 	- ぷよぷよテトリスで対人をはじめた。
-	- 40line -> 01:11
-- WoT
-    - http://worldoftanks.asia/ja/community/accounts/2004239834-Ranats/
-    - イギリス駆逐ATルートはいいぞ
-    - イベントとフレンドに乗ってアメリカ重戦車でレーティングを溶かしている
-- 音ゲーマー(よわい)
+	- 40line -> 01:07.75
+	- (TOP -> 01:03:376)
+- 音ゲー(よわい)
 	- BeatmaniaIIDX (6段)
 	- pop'n music (30くらい)
 	- DJ MAX
+- BLAZBLUE(よわい)
+	- アズラエル(10～12段)
 - 犬猫
     - かわいい
 - 回鍋肉
     - おいしい
-- がんば
-    - ルビィ！
-
-#### どこ
-- 神奈川 ときどき 福岡
+- もやもや
+	- さまぁ～ず
