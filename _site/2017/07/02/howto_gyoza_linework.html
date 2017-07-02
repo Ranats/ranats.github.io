@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Ranats.GitHub.io : ">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/syntax.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/genericons.css">
+    <link rel="alternate" type="application/atom+xml" title="Glasse-age" href="/feed.xml"/>
+    <title> AEで集中線をつくりたい | Glasse-age</title>
+</head>
+
+<body>
+<!-- HEADER -->
+<div id="header_wrap" class="outer">
+    <header class="inner" style="padding-bottom: 1%">
+        <a id="forkme_banner" href="https://github.com/Ranats/ranats.github.io">View on GitHub</a>
+
+        <h1 id="project_title"><a href=http://ranats.github.io>Glasse-age</a></h1>
+        <h2 id="project_tagline" style="font-size: 1em">ぐらさーじゅ</h2>
+        <br>
+        <div style="word-spacing: 1em" align="right">
+            <span class="genericon genericon-home" style="color: white;font-size: 1.5em"><a href='/'>home</a></span>
+            <span class="genericon genericon-user" style="color: white;font-size: 1.5em"><a
+                    href='/about'>about</a></span>
+            <span class="genericon genericon-feed" style="color: white;font-size: 1.5em"><a
+                    href='/feed.xml'>feed</a></span>
+        </div>
+    </header>
+</div>
+
+
+<div class="page-content">
+    <div class="wrapper">
+        <div id="main_content_wrap" class="outer">
+            <section id="main_content" class="inner">
+
+                            <h2 class="post-title" itemprop="name headline">AEで集中線をつくりたい</h2>
+            <span class="post-meta"style="margin-left: 0.5em">Jul 2, 2017</span>
+            <div class="post-content" style="border: ridge;padding: 1em;margin-bottom: 2em">
+                <h3>はじめに</h3>
+
+<blockquote class="twitter-tweet tw-align-center" data-conversation="none" data-cards="" data-partner="tweetdeck"><p lang="und" dir="ltr"><a href="https://t.co/xktAklzKj1">pic.twitter.com/xktAklzKj1</a></p>&mdash; らなとす 8thGen (@Ranats85) <a href="https://twitter.com/Ranats85/status/881526657562976256">July 2, 2017</a></blockquote>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<h3>覚え書き</h3>
+
+<ol>
+<li><p><strong>コンポジションをつくる</strong></p>
+
+<p>元のコンポ(集中線を乗せたいコンポ)より大きめのサイズで新規コンポジションを作成する.</p></li>
+<li><p><strong>フラクタルノイズ</strong></p>
+
+<p>新規平面を作成し，エフェクト &gt; ラクタルノイズで元となる線をつくる．</p>
+
+<p><img src="/images/gyoza/fractal.png" width=100% /></p>
+
+<p>コントラスト，明るさ，スケールの幅・高さを調節して良い感じにする．</p></li>
+<li><p><strong>グラデーションマスク</strong></p>
+
+<p>新規レイヤーをつくり，エフェクト &gt; グラデーションを追加．</p>
+
+<p><img src="/images/gyoza/gradation.png" width=100% /></p>
+
+<p>黒と白の位置を良い感じに調節する．</p>
+
+<p>レイヤーの描画モードを「焼き込み(リニア)」にして重ねるとこんな感じになる</p>
+
+<p><img src="/images/gyoza/fractal_gradation.png" width=60% /></p></li>
+<li><p><strong>極座標</strong></p>
+
+<p>一番上になるレイヤーをつくり，エフェクト &gt; 極座標を追加．</p>
+
+<p><img src="/images/gyoza/kyokuzahyou_param.jpg" width=60% /></p>
+
+<p>補間を100%にし，変換の種類を「長方形から極線へ」に変更する．</p>
+
+<p>こちらは描画モード「スクリーン」で重ね，こんな感じになる．</p>
+
+<p><img src="/images/gyoza/fractal_kyokuzahyou.png" width=60% /></p></li>
+<li><p><strong>完成</strong></p>
+
+<p>元のコンポに戻って，重ねたい所に上記で作成した集中線のコンポを追加する．</p>
+
+<p>あとは回したり好きなようにしたら完成．</p>
+
+<p><img src="/images/gyoza/saigo.png" width=100% /></p></li>
+</ol>
+
+<hr>
+
+<p>参考</p>
+
+<ul>
+<li>AfterEffectsの使い方｜フラクタルノイズで集中線を作る : <a href="http://cubelic3.jp/aftereffects_fractal02/">http://cubelic3.jp/aftereffects_fractal02/</a></li>
+<li>【AE】至高の集中線を作ろう | Valkyrja-Graphics.net∽Blog : <a href="http://valkyrja-graphics.net/blog/archives/801">http://valkyrja-graphics.net/blog/archives/801</a></li>
+</ul>
+
+                <span class="post-meta"style="margin-left: 0.5em">#AfterEffects</span>
+
+            </div>
+
+
+            <hr>
+        
+        <nav style="margin-bottom: 3em;">
+            <div align="right" style="float:left;margin: auto auto;width: 40%">
+            
+            </div>
+            <div align="left" style="float:right;margin: auto auto;width: 40%">
+            
+                <a href="/2016/07/30/postgresql_on_heroku.html">
+                    Previous<br>
+                    SinatraでActiveRecordでPostgresqlでherokuで &gt;&gt;
+                </a>
+            
+            </div>
+        </nav>
+        <div style="clear:both"></div>
+
+
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER  -->
+<div id="footer_wrap" class="outer">
+    <footer class="inner">
+        <p>© 2016 Ranats</p>
+    </footer>
+</div>
+
+</body>
+
+</html>

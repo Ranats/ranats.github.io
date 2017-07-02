@@ -4,11 +4,84 @@
   <description>覚え書きブログ - グラサージュ</description>
   <link href="http://ranats.github.io"/>
   <atom:link href="http://ranats.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-  <updated>2017-03-19 01:09:17 +0900</updated>
+  <updated>2017-07-02 15:05:20 +0900</updated>
   <id>http://ranats.github.io</id>
   <author>
     <name>Ranats</name>
   </author>
+  
+  <entry>
+    <title>AEで集中線をつくりたい</title>
+    <id>http://ranats.github.io/2017/07/02/howto_gyoza_linework.html</id>
+    
+    <summary>&lt;h3&gt;はじめに&lt;/h3&gt;
+</summary>
+
+    <content type="html">&lt;h3&gt;はじめに&lt;/h3&gt;
+
+&lt;blockquote class=&quot;twitter-tweet tw-align-center&quot; data-conversation=&quot;none&quot; data-cards=&quot;&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p lang=&quot;und&quot; dir=&quot;ltr&quot;&gt;&lt;a href=&quot;https://t.co/xktAklzKj1&quot;&gt;pic.twitter.com/xktAklzKj1&lt;/a&gt;&lt;/p&gt;&amp;mdash; らなとす 8thGen (@Ranats85) &lt;a href=&quot;https://twitter.com/Ranats85/status/881526657562976256&quot;&gt;July 2, 2017&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;h3&gt;覚え書き&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;コンポジションをつくる&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;元のコンポ(集中線を乗せたいコンポ)より大きめのサイズで新規コンポジションを作成する.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;フラクタルノイズ&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;新規平面を作成し，エフェクト &amp;gt; ラクタルノイズで元となる線をつくる．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/gyoza/fractal.png&quot; width=100% /&gt;&lt;/p&gt;
+
+&lt;p&gt;コントラスト，明るさ，スケールの幅・高さを調節して良い感じにする．&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;グラデーションマスク&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;新規レイヤーをつくり，エフェクト &amp;gt; グラデーションを追加．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/gyoza/gradation.png&quot; width=100% /&gt;&lt;/p&gt;
+
+&lt;p&gt;黒と白の位置を良い感じに調節する．&lt;/p&gt;
+
+&lt;p&gt;レイヤーの描画モードを「焼き込み(リニア)」にして重ねるとこんな感じになる&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/gyoza/fractal_gradation.png&quot; width=60% /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;極座標&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;一番上になるレイヤーをつくり，エフェクト &amp;gt; 極座標を追加．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/gyoza/kyokuzahyou_param.jpg&quot; width=60% /&gt;&lt;/p&gt;
+
+&lt;p&gt;補間を100%にし，変換の種類を「長方形から極線へ」に変更する．&lt;/p&gt;
+
+&lt;p&gt;こちらは描画モード「スクリーン」で重ね，こんな感じになる．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/gyoza/fractal_kyokuzahyou.png&quot; width=60% /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;完成&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;元のコンポに戻って，重ねたい所に上記で作成した集中線のコンポを追加する．&lt;/p&gt;
+
+&lt;p&gt;あとは回したり好きなようにしたら完成．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/gyoza/saigo.png&quot; width=100% /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;参考&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;AfterEffectsの使い方｜フラクタルノイズで集中線を作る : &lt;a href=&quot;http://cubelic3.jp/aftereffects_fractal02/&quot;&gt;http://cubelic3.jp/aftereffects_fractal02/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;【AE】至高の集中線を作ろう | Valkyrja-Graphics.net∽Blog : &lt;a href=&quot;http://valkyrja-graphics.net/blog/archives/801&quot;&gt;http://valkyrja-graphics.net/blog/archives/801&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+
+    <updated>2017-07-02 00:00:00 +0900</updated>
+    <link href="http://ranats.github.io/2017/07/02/howto_gyoza_linework.html"/>
+    <guid isPermaLink="true">http://ranats.github.io/2017/07/02/howto_gyoza_linework.html</guid>
+    <category term="AfterEffects"/>
+  </entry>
   
   <entry>
     <title>SinatraでActiveRecordでPostgresqlでherokuで</title>

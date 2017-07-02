@@ -17,7 +17,7 @@
 <!-- HEADER -->
 <div id="header_wrap" class="outer">
     <header class="inner" style="padding-bottom: 1%">
-        <a id="forkme_banner" href="https://github.com/Ranats/jekyll">View on GitHub</a>
+        <a id="forkme_banner" href="https://github.com/Ranats/ranats.github.io">View on GitHub</a>
 
         <h1 id="project_title"><a href=http://ranats.github.io>Glasse-age</a></h1>
         <h2 id="project_tagline" style="font-size: 1em">ぐらさーじゅ</h2>
@@ -41,6 +41,78 @@
                 <!-- MAIN CONTENT -->
 
         <ul class="post-list" style="padding: 0">
+            
+
+            <h2>
+                <a class="post-link" href="/2017/07/02/howto_gyoza_linework.html">AEで集中線をつくりたい </a>
+            </h2>
+            <span class="post-meta" style="margin-left: 0.5em">Jul 2, 2017</span>
+
+            <div class="post-content" style="border: ridge;padding: 1em;margin-bottom: 2em">
+                <!--<h3>はじめに</h3>
+-->
+                <h3>はじめに</h3>
+
+<blockquote class="twitter-tweet tw-align-center" data-conversation="none" data-cards="" data-partner="tweetdeck"><p lang="und" dir="ltr"><a href="https://t.co/xktAklzKj1">pic.twitter.com/xktAklzKj1</a></p>&mdash; らなとす 8thGen (@Ranats85) <a href="https://twitter.com/Ranats85/status/881526657562976256">July 2, 2017</a></blockquote>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<h3>覚え書き</h3>
+
+<ol>
+<li><p><strong>コンポジションをつくる</strong></p>
+
+<p>元のコンポ(集中線を乗せたいコンポ)より大きめのサイズで新規コンポジションを作成する.</p></li>
+<li><p><strong>フラクタルノイズ</strong></p>
+
+<p>新規平面を作成し，エフェクト &gt; ラクタルノイズで元となる線をつくる．</p>
+
+<p><img src="/images/gyoza/fractal.png" width=100% /></p>
+
+<p>コントラスト，明るさ，スケールの幅・高さを調節して良い感じにする．</p></li>
+<li><p><strong>グラデーションマスク</strong></p>
+
+<p>新規レイヤーをつくり，エフェクト &gt; グラデーションを追加．</p>
+
+<p><img src="/images/gyoza/gradation.png" width=100% /></p>
+
+<p>黒と白の位置を良い感じに調節する．</p>
+
+<p>レイヤーの描画モードを「焼き込み(リニア)」にして重ねるとこんな感じになる</p>
+
+<p><img src="/images/gyoza/fractal_gradation.png" width=60% /></p></li>
+<li><p><strong>極座標</strong></p>
+
+<p>一番上になるレイヤーをつくり，エフェクト &gt; 極座標を追加．</p>
+
+<p><img src="/images/gyoza/kyokuzahyou_param.jpg" width=60% /></p>
+
+<p>補間を100%にし，変換の種類を「長方形から極線へ」に変更する．</p>
+
+<p>こちらは描画モード「スクリーン」で重ね，こんな感じになる．</p>
+
+<p><img src="/images/gyoza/fractal_kyokuzahyou.png" width=60% /></p></li>
+<li><p><strong>完成</strong></p>
+
+<p>元のコンポに戻って，重ねたい所に上記で作成した集中線のコンポを追加する．</p>
+
+<p>あとは回したり好きなようにしたら完成．</p>
+
+<p><img src="/images/gyoza/saigo.png" width=100% /></p></li>
+</ol>
+
+<hr>
+
+<p>参考</p>
+
+<ul>
+<li>AfterEffectsの使い方｜フラクタルノイズで集中線を作る : <a href="http://cubelic3.jp/aftereffects_fractal02/">http://cubelic3.jp/aftereffects_fractal02/</a></li>
+<li>【AE】至高の集中線を作ろう | Valkyrja-Graphics.net∽Blog : <a href="http://valkyrja-graphics.net/blog/archives/801">http://valkyrja-graphics.net/blog/archives/801</a></li>
+</ul>
+
+                <span class="post-meta"style="margin-left: 0.5em">#AfterEffects</span>
+
+            </div>
             
 
             <h2>
@@ -295,104 +367,6 @@ SinatraからActiveRecord 3を使う(2) CRUD操作 - アインシュタインの
 <p><code>$ urxvt -fn xft:Ricty:pixelsize=10</code>  </p>
 
 <p>とかオプション付けると指定したフォントで新しく開けるみたい。</p>
-
-                <span class="post-meta"style="margin-left: 0.5em">#ArchLinux</span>
-
-            </div>
-            
-
-            <h2>
-                <a class="post-link" href="/2016/04/13/ibus-mozc-fixed.html">追記：ibus-mozcの初期入力モードを「ひらがな」にする。 </a>
-            </h2>
-            <span class="post-meta" style="margin-left: 0.5em">Apr 13, 2016</span>
-
-            <div class="post-content" style="border: ridge;padding: 1em;margin-bottom: 2em">
-                <!--<p>ibus-mozc、起動後の初期入力モードが「直接入力」になっていて、
-毎回マウス操作で入力モードを「ひらがな」に切り替えるの面倒だーと常々思っていたので修正した話。
-<br>
-<br></p>
--->
-                <p>ibus-mozc、起動後の初期入力モードが「直接入力」になっていて、
-毎回マウス操作で入力モードを「ひらがな」に切り替えるの面倒だーと常々思っていたので修正した話。
-<br>
-<br></p>
-
-<p>調べてみると公式が「現行バージョンでは初期モードを変更する事はできない」って言ってるのを見かけた。</p>
-
-<p>ソースを修正してビルドすればイケる、との事。</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="True-1"></a><span class="lineno">1</span> $ yaourt -G ibus-mozc
-<a name="True-2"></a><span class="lineno">2</span> $ cd ibus-mozc
-<a name="True-3"></a><span class="lineno">3</span> $ ls
-<a name="True-4"></a><span class="lineno">4</span> PKGBUILD emacs-mozc.install
-<a name="True-5"></a><span class="lineno">5</span> 
-<a name="True-6"></a><span class="lineno">6</span> $ makepkg -s
-<a name="True-7"></a><span class="lineno">7</span> ...
-</code></pre></div>
-<p>「property_handler.cc」の83行目、「const bool kActivatedOnLaunch = false;」をtrueに変更する事で設定できるらしい。</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="True-1"></a><span class="lineno"> 1</span> $ find -name property_handler.cc
-<a name="True-2"></a><span class="lineno"> 2</span> ./src/mozc/src/unix/ibus/property_handler.cc
-<a name="True-3"></a><span class="lineno"> 3</span> 
-<a name="True-4"></a><span class="lineno"> 4</span> $ vim src/mozc/src/unix/ibus/property_handler.cc
-<a name="True-5"></a><span class="lineno"> 5</span> 
-<a name="True-6"></a><span class="lineno"> 6</span> ...
-<a name="True-7"></a><span class="lineno"> 7</span> // Some users expect that Mozc is turned off by default on IBus 1.5.0 and later.
-<a name="True-8"></a><span class="lineno"> 8</span> // https://code.google.com/p/mozc/issues/detail?id=201
-<a name="True-9"></a><span class="lineno"> 9</span> // On IBus 1.4.x, IBus expects that an IME should always be turned on and
-<a name="True-10"></a><span class="lineno">10</span> // IME on/off keys are handled by IBus itself rather than each IME.
-<a name="True-11"></a><span class="lineno">11</span> #if IBUS_CHECK_VERSION(1, 5, 0)
-<a name="True-12"></a><span class="lineno">12</span> const bool kActivatedOnLaunch = true; //false;
-<a name="True-13"></a><span class="lineno">13</span> #else
-<a name="True-14"></a><span class="lineno">14</span> const bool kActivatedOnLaunch = true;
-<a name="True-15"></a><span class="lineno">15</span> #endif  // IBus&gt;=1.5.0
-<a name="True-16"></a><span class="lineno">16</span> ...
-</code></pre></div>
-<p>ビルドする。</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="True-1"></a><span class="lineno">1</span> $ yaourt -U ibus-mozc-2.17.2313.102-1-x86_64.pkg.tar.xz
-</code></pre></div>
-<p><br>
-再ログイン後入力メソッドを切り替えると、ちゃんと「ひらがな」入力が初期モードに設定されてる。</p>
-
-<p><br>
-<br></p>
-
-<h2>追記</h2>
-
-<p>薄々気づいてはいたけど、なんか実はうまく行ってなかったっぽい</p>
-
-<p>Mozcのリポジトリ(<a href="https://github.com/google/mozc">https://github.com/google/mozc</a>) をforkして、上記ファイル(property_handler.cc)を編集。</p>
-
-<p>PKGBUILDを編集してソースをForkしたリポジトリに変更する。</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="True-1"></a><span class="lineno">1</span> $ vim PKGBUILD
-<a name="True-2"></a><span class="lineno">2</span> ...
-<a name="True-3"></a><span class="lineno">3</span> source=(
-<a name="True-4"></a><span class="lineno">4</span>     mozc::git+https://github.com/Ranats/mozc.git
-<a name="True-5"></a><span class="lineno">5</span>     http://...
-<a name="True-6"></a><span class="lineno">6</span>     http://...
-<a name="True-7"></a><span class="lineno">7</span> )
-<a name="True-8"></a><span class="lineno">8</span> ...
-</code></pre></div>
-<p>ibus-mozcがインストールしてある場合はアンインストール後、
-makepkg してビルド。</p>
-
-<p><br></p>
-
-<p>...なんかエラー出たけど一緒に生成されてた mozc -&gt; ibus-mozc の順番でインストールしたら入った。<br>
-<br></p>
-
-<p>再起動して起動時から「ひらがな」が選択されてるのを確認。ﾔｯﾀｰ</p>
-
-<p><br></p>
-
-<h4>まとめ</h4>
-
-<p>makepkg に関して<s>よく</s>まったく理解してなかった。
-<br><br></p>
-
-<h4>参考</h4>
-
-<ul>
-<li>ibus-mozc の初期モードを「ひらがな」入力にする | uvirt.com <a href="https://www.uvirt.com/wp1/20141026-134">https://www.uvirt.com/wp1/20141026-134</a></li>
-</ul>
 
                 <span class="post-meta"style="margin-left: 0.5em">#ArchLinux</span>
 
