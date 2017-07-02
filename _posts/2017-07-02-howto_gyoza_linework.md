@@ -31,7 +31,7 @@ tag: AfterEffects
     
     黒と白の位置を良い感じに調節する．
     
-    レイヤーの描画モードを「焼き込み(リニア)」にして重ねるとこんな感じになる
+    レイヤーの描画モードを「焼き込み(リニア)」にして重ねるとこんな感じになる．
     
     <img src="/images/gyoza/fractal_gradation.png" width=60% />
 
@@ -41,9 +41,7 @@ tag: AfterEffects
     
     <img src="/images/gyoza/kyokuzahyou_param.jpg" width=60% />
     
-    補間を100%にし，変換の種類を「長方形から極線へ」に変更する．
-    
-    こちらは描画モード「スクリーン」で重ね，こんな感じになる．
+    補間を100%にし，変換の種類を「長方形から極線へ」に変更する．こんな感じになる．
     
     <img src="/images/gyoza/fractal_kyokuzahyou.png" width=60% />
     
@@ -51,7 +49,7 @@ tag: AfterEffects
 
     元のコンポに戻って，重ねたい所に上記で作成した集中線のコンポを追加する．
     
-    あとは回したり好きなようにしたら完成．
+    描画モード「スクリーン」で重ねたら回したり好きなようにして完成．
     
     <img src="/images/gyoza/saigo.png" width=100% />
     

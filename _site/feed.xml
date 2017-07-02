@@ -4,7 +4,7 @@
   <description>覚え書きブログ - グラサージュ</description>
   <link href="http://ranats.github.io"/>
   <atom:link href="http://ranats.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-  <updated>2017-07-02 15:27:40 +0900</updated>
+  <updated>2017-07-02 15:32:10 +0900</updated>
   <id>http://ranats.github.io</id>
   <author>
     <name>Ranats</name>
@@ -44,7 +44,7 @@
 
 &lt;p&gt;黒と白の位置を良い感じに調節する．&lt;/p&gt;
 
-&lt;p&gt;レイヤーの描画モードを「焼き込み(リニア)」にして重ねるとこんな感じになる&lt;/p&gt;
+&lt;p&gt;レイヤーの描画モードを「焼き込み(リニア)」にして重ねるとこんな感じになる．&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/gyoza/fractal_gradation.png&quot; width=60% /&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;極座標&lt;/strong&gt;&lt;/p&gt;
@@ -53,16 +53,14 @@
 
 &lt;p&gt;&lt;img src=&quot;/images/gyoza/kyokuzahyou_param.jpg&quot; width=60% /&gt;&lt;/p&gt;
 
-&lt;p&gt;補間を100%にし，変換の種類を「長方形から極線へ」に変更する．&lt;/p&gt;
-
-&lt;p&gt;こちらは描画モード「スクリーン」で重ね，こんな感じになる．&lt;/p&gt;
+&lt;p&gt;補間を100%にし，変換の種類を「長方形から極線へ」に変更する．こんな感じになる．&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/gyoza/fractal_kyokuzahyou.png&quot; width=60% /&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;完成&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;元のコンポに戻って，重ねたい所に上記で作成した集中線のコンポを追加する．&lt;/p&gt;
 
-&lt;p&gt;あとは回したり好きなようにしたら完成．&lt;/p&gt;
+&lt;p&gt;描画モード「スクリーン」で重ねたら回したり好きなようにして完成．&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/gyoza/saigo.png&quot; width=100% /&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
