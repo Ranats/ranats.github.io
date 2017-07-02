@@ -6,7 +6,7 @@ tag: AfterEffects
 
 ### はじめに
 
-<blockquote class="twitter-tweet tw-align-center" data-conversation="none" data-cards="" data-partner="tweetdeck"><p lang="und" dir="ltr"><a href="https://t.co/xktAklzKj1">pic.twitter.com/xktAklzKj1</a></p>&mdash; らなとす 8thGen (@Ranats85) <a href="https://twitter.com/Ranats85/status/881526657562976256">July 2, 2017</a></blockquote>
+<blockquote class="twitter-tweet tw-align-center" data-conversation="true" data-cards="" data-partner="tweetdeck"><p lang="und" dir="ltr"><a href="https://t.co/xktAklzKj1">pic.twitter.com/xktAklzKj1</a></p>&mdash; らなとす 8thGen (@Ranats85) <a href="https://twitter.com/Ranats85/status/881526657562976256">July 2, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ### 覚え書き
