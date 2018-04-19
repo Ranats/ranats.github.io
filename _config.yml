@@ -16,16 +16,17 @@ twitter_username: Rantas85
 github_username:  Ranats
 
 # Build settings
-#markdown: kramdown
-markdown: redcarpet
-redcarpet:
-  extensions: [tables,autolink,strikethrough,fenced_code_blocks]
-#markdown: kramdown
-#kramdown:
-#highlighter: rouge
+markdown: kramdown
+#markdown: redcarpet
+#redcarpet:
+#  extensions: [tables,autolink,strikethrough,fenced_code_blocks]
+markdown: kramdown
+kramdown:
+        input: GFM
+        #highlighter: rouge
 #    syntax_highlighter_opts:
 
-highlighter: pygments
+        highlighter: pygments
 #highlighter: false
 pygments_options: ['lineanchors', 'linenos']
 
