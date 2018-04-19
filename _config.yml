@@ -16,7 +16,7 @@ twitter_username: Rantas85
 github_username:  Ranats
 
 # Build settings
-markdown: kramdown
+#markdown: kramdown
 #markdown: redcarpet
 #redcarpet:
 #  extensions: [tables,autolink,strikethrough,fenced_code_blocks]
@@ -26,7 +26,7 @@ kramdown:
         hard_wrap: false
         enable_coderay: false
         syntax_highlighter: rouge
-        #highlighter: rouge
+        highlighter: rouge
 #    syntax_highlighter_opts:
 
         #highlighter: pygments
