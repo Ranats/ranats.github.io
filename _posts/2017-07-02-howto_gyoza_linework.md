@@ -27,7 +27,7 @@ tag: AfterEffects
 
     新規レイヤーをつくり，エフェクト > グラデーションを追加．
     
-    ![gyoza]({{site.baseurl}}/images/gyoza/gradation.png){:width="100%"}
+    ![gyoza]({{site.baseurl}}images/gyoza/gradation.png){:width="100%"}
     
     黒と白の位置を良い感じに調節する．
     
