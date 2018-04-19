@@ -19,31 +19,31 @@ tag: AfterEffects
 
     新規平面を作成し，エフェクト > ラクタルノイズで元となる線をつくる．
     
-    <img src="/images/gyoza/fractal.png" width=100% />
-
+    ![gyoza]({{site.baseurl}}/images/gyoza/fractal.png){:width="100%"}
+    
     コントラスト，明るさ，スケールの幅・高さを調節して良い感じにする．
 
 3. **グラデーションマスク**
 
     新規レイヤーをつくり，エフェクト > グラデーションを追加．
     
-    <img src="/images/gyoza/gradation.png" width=100% />
+    ![gyoza]({{site.baseurl}}/images/gyoza/gradation.png){:width="100%"}
     
     黒と白の位置を良い感じに調節する．
     
     レイヤーの描画モードを「焼き込み(リニア)」にして重ねるとこんな感じになる．
     
-    <img src="/images/gyoza/fractal_gradation.png" width=60% />
+    ![gyoza]({{site.baseurl}}/images/gyoza/fractal_gradation.png){:width="60%"}
 
 4. **極座標**
 
     一番上になるレイヤーをつくり，エフェクト > 極座標を追加．
     
-    <img src="/images/gyoza/kyokuzahyou_param.jpg" width=60% />
+    ![gyoza]({site.baseurl}}/images/gyoza/kyokuzahyou_param.jpg){ :width="60%" }
     
     補間を100%にし，変換の種類を「長方形から極線へ」に変更する．こんな感じになる．
     
-    <img src="/images/gyoza/fractal_kyokuzahyou.png" width=60% />
+    ![gyoza]({{site/baseurl}}/images/gyoza/fractal_kyokuzahyou.png){ :width="60%" }
     
 5. **完成**
 
@@ -51,10 +51,10 @@ tag: AfterEffects
     
     描画モード「スクリーン」で重ねたら回したり好きなようにして完成．
     
-    <img src="/images/gyoza/saigo.png" width=100% />
+    ![gyoza]({{site.baseurl}}/images/gyoza/saigo.png){:width="100%"}
     
 ---
 参考
 
-- AfterEffectsの使い方｜フラクタルノイズで集中線を作る : http://cubelic3.jp/aftereffects_fractal02/
-- 【AE】至高の集中線を作ろう | Valkyrja-Graphics.net∽Blog : http://valkyrja-graphics.net/blog/archives/801
+- AfterEffectsの使い方｜フラクタルノイズで集中線を作る : [http://cubelic3.jp/aftereffects_fractal02/](http://cubelic3.jp/aftereffects_fractal02/)
+- 【AE】至高の集中線を作ろう｜Valkyrja-Graphics.net∽Blog : [http://valkyrja-graphics.net/blog/archives/801](http://valkyrja-graphics.net/blog/archives/801)
