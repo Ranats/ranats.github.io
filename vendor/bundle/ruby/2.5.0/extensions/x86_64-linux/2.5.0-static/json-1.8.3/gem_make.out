@@ -1,0 +1,27 @@
+current directory: /home/coda/gh_projects/ranats.github.io/vendor/bundle/ruby/2.5.0/gems/json-1.8.3/ext/json/ext/generator
+/home/coda/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20180419-25255-1v7ls7y.rb extconf.rb
+creating Makefile
+
+current directory: /home/coda/gh_projects/ranats.github.io/vendor/bundle/ruby/2.5.0/gems/json-1.8.3/ext/json/ext/generator
+make "DESTDIR=" clean
+
+current directory: /home/coda/gh_projects/ranats.github.io/vendor/bundle/ruby/2.5.0/gems/json-1.8.3/ext/json/ext/generator
+make "DESTDIR="
+compiling generator.c
+generator.c: In function ‘generate_json’:
+generator.c:861:25: error: ‘rb_cFixnum’ undeclared (first use in this function); did you mean ‘mFixnum’?
+     } else if (klass == rb_cFixnum) {
+                         ^~~~~~~~~~
+                         mFixnum
+generator.c:861:25: note: each undeclared identifier is reported only once for each function it appears in
+generator.c:863:25: error: ‘rb_cBignum’ undeclared (first use in this function); did you mean ‘rb_cFixnum’?
+     } else if (klass == rb_cBignum) {
+                         ^~~~~~~~~~
+                         rb_cFixnum
+generator.c: At top level:
+cc1: warning: unrecognized command line option ‘-Wno-self-assign’
+cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand’
+cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
+make: *** [Makefile:242: generator.o] Error 1
+
+make failed, exit code 2
