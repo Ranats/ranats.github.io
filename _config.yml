@@ -23,12 +23,15 @@ markdown: kramdown
 markdown: kramdown
 kramdown:
         input: GFM
+        hard_wrap: false
+        enable_coderay: false
+        syntax_highlighter: rouge
         #highlighter: rouge
 #    syntax_highlighter_opts:
 
-        highlighter: pygments
+        #highlighter: pygments
 #highlighter: false
-pygments_options: ['lineanchors', 'linenos']
+#pygments_options: ['lineanchors', 'linenos']
 
 
 gems: [jekyll-paginate]

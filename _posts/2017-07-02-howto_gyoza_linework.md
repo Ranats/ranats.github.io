@@ -39,11 +39,11 @@ tag: AfterEffects
 
     一番上になるレイヤーをつくり，エフェクト > 極座標を追加．
     
-    ![gyoza]({site.baseurl}}/images/gyoza/kyokuzahyou_param.jpg){:width="60%"}
+    ![gyoza]({{site.baseurl}}/images/gyoza/kyokuzahyou_param.jpg){:width="60%"}
     
     補間を100%にし，変換の種類を「長方形から極線へ」に変更する．こんな感じになる．
     
-    ![gyoza]({{site/baseurl}}/images/gyoza/fractal_kyokuzahyou.png){:width="60%"}
+    ![gyoza]({{site.baseurl}}/images/gyoza/fractal_kyokuzahyou.png){:width="60%"}
     
 5. **完成**
 
