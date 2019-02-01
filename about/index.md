@@ -11,10 +11,6 @@ title: about
 [{:.profile_img}
 ![profile_img](https://pbs.twimg.com/profile_images/625003062336204800/aT0IGkPy.png)](https://twitter.com/Ranats85)
 
-- HTML
-
-<img src="https://pbs.twimg.com/profile_images/625003062336204800/aT0IGkPy.png" align="bottom" width=100px style="border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px" alt="profile_img">
-
 うさぎ。Arch。らなとす。
 よく食べる。体重がJC。
 
