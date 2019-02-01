@@ -446,4 +446,12 @@ Small Device Styles
 
 }
 
+.profile_img{
+  align: "bottom";
+  width: 100px;
+  border-radius:10px;
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+}
+
 @import	"syntax";
