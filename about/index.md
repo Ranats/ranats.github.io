@@ -9,7 +9,8 @@ title: about
 #### 誰
 
 [![profile_img](https://pbs.twimg.com/profile_images/625003062336204800/aT0IGkPy.png)](https://twitter.com/Ranats85)
-<img align='bottom' src='https://pbs.twimg.com/profile_images/625003062336204800/aT0IGkPy.png' width=100px style="border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px" alt='アイコン'></a>
+
+<img align='bottom' src='https://pbs.twimg.com/profile_images/625003062336204800/aT0IGkPy.png' width=100px style="border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px" alt='アイコン'>
 
 うさぎ。Arch。らなとす。
 よく食べる。体重がJC。
