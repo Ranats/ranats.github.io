@@ -15,7 +15,7 @@ title: about
 よく食べる。体重がJC。
 
 #### Link
-- [Tiwtter](https://twitter.com/Ranats85)
+- [Twtter](https://twitter.com/Ranats85)
 - [Github](https://github.com/Ranats)
 - [Wishlist](http://www.amazon.co.jp/registry/wishlist/1YM9QBHU730RY)
 
