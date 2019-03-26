@@ -16,6 +16,7 @@ title: about
 #### Link
 - [Twitter](https://twitter.com/Ranats85)
 - [Github](https://github.com/Ranats)
+- [Blog](http://ranats.hatenablog.com)
 - [Wishlist](http://www.amazon.co.jp/registry/wishlist/1YM9QBHU730RY)
 
 #### 何
