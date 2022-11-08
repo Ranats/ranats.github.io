@@ -18,7 +18,7 @@ title: about
 - [Github](https://github.com/Ranats)
 - [Blog](http://ranats.hatenablog.com)
 - [Wishlist](http://www.amazon.co.jp/registry/wishlist/1YM9QBHU730RY)
-
+- BTC: 3PVsqR1wU6QMwnW1TjaXuB2oRVSqjWkGSs
 #### 何
 - Ruby
     - ... on Rails
