@@ -8,7 +8,7 @@ title: about
 
 #### 誰
 
-[![profile_img](https://avatars.githubusercontent.com/u/9674834?s=96&v=4){:.profile_img}](https://twitter.com/Ranats85)
+[![profile_img](https://avatars.githubusercontent.com/u/9674834?s=96&v=4)(https://twitter.com/Ranats85)
 
 うさぎ。Arch。らなとす。
 よく食べる。体重がJC。
