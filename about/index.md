@@ -14,10 +14,11 @@ title: about
 よく食べる。体重がJC。
 
 #### Link
-- [Twitter](https://twitter.com/Ranats85)
-- [Github](https://github.com/Ranats)
-- [Blog](http://ranats.hatenablog.com)
-- [Wishlist](http://www.amazon.co.jp/registry/wishlist/1YM9QBHU730RY)
+- [🕊Twitter](https://twitter.com/Ranats85)
+- [⚙Github](https://github.com/Ranats)
+- [📘Blog](http://ranats.hatenablog.com)
+- [💳Wishlist](http://www.amazon.co.jp/registry/wishlist/1YM9QBHU730RY)
+- [☕Ko-fi](https://ko-fi.com/ranats)
 - BTC: 3PVsqR1wU6QMwnW1TjaXuB2oRVSqjWkGSs
 - 
 #### 何
