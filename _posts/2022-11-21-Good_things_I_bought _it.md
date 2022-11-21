@@ -22,8 +22,6 @@ tag: Life
 
 サブスクリプションもあるので，もっと買って良かったものたちを買わせたい方にもオススメです．
 
-↓↓↓
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R2GHAKG)
+☛　[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R2GHAKG)
 
 ---
