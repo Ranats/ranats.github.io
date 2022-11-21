@@ -19,7 +19,10 @@ tag: Life
 ### 1杯の紅茶
 
 1杯の紅茶を私らなとすに奢れるシステムが出来ました．
+
 サブスクリプションもあるので，もっと買って良かったものたちを買わせたい方にもオススメです．
+
+↓↓↓
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R2GHAKG)
 
