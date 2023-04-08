@@ -4,13 +4,13 @@ title: about
 ---
 
 #### About
-すぐ忘れるので覚え書きのためのブログです。
+すぐ忘れるので覚え書きのためのブログだった何か。
 
 #### 誰
 
 [![profile_img](https://avatars.githubusercontent.com/u/9674834?s=96&v=4)](https://twitter.com/Ranats85)
 
-うさぎ。Arch。らなとす。
+倒壊大学の博士課程でﾋﾟﾖﾋﾟﾖ研究してる限界うさぎ．
 よく食べる。体重がJC。
 
 #### Link
@@ -23,11 +23,14 @@ title: about
 - 
 #### 何
 - 多目的最適化
+- メタヒューリスティクス
+- GA - GeneticAlgorithm
 - Ruby
     - ... on Rails
-- GA - GeneticAlgorithm
+- Alto Sax / EWI
+- MTGA
+- FF14
 - スクレイピング/クローラ
 - Oculus DK2
 - <font size=1.2em>CTF</font>
-- Alto Sax / EWI
 - 思いついたら追加しよ
