@@ -14,6 +14,7 @@
     .exam-media{margin:12px 0 16px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
     .exam-media img{display:block;width:100%;height:auto;max-height:480px;object-fit:contain;background:#fff}
     .exam-media-cap{padding:8px 11px;border-top:1px solid var(--line);font-size:10px;color:var(--muted);line-height:1.5;background:#fbfdfe}
+    .q-card{content-visibility:auto;contain-intrinsic-size:auto 420px}
     @media(max-width:760px){.exam-media img{max-height:390px}}
   `;
   document.head.appendChild(style);
