@@ -46,44 +46,56 @@
     else body=lines.map((line,i)=>`<text x="54" y="${112+i*42}" font-size="18" fill="#243242" font-family="${m.kind==='code'||m.kind==='list'?'Noto Sans Mono,Noto Sans JP,monospace':'Noto Sans JP,sans-serif'}">${svgText(line)}</text>`).join("");
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}"><rect width="100%" height="100%" fill="#fff"/><rect width="100%" height="68" fill="#eef7fa"/><text x="44" y="44" font-size="25" font-weight="800" fill="#17365d" font-family="Noto Sans JP,sans-serif">${svgText(m.title||'問題資料')}</text>${body}</svg>`;
   }
-  const dataUri=svg=>"data:image/svg+xml;charset=utf-8,"+encodeURIComponent(svg);
+  const mediaCache=new WeakMap();
+  function dataUriFor(m){
+    if(!m)return"";
+    if(mediaCache.has(m))return mediaCache.get(m);
+    const uri="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(mediaSvg(m));
+    mediaCache.set(m,uri);
+    return uri;
+  }
 
+  function setText(el,text){if(el&&el.textContent!==String(text))el.textContent=String(text)}
   function fixStats(){
     const stats=[...document.querySelectorAll("#stats .stat")];
     if(stats[0]){
       const n=bank?.sections?.length||11;
       const store=readStore(); const attempted=new Set((store.attempts||[]).map(a=>a.sectionId)).size;
-      stats[0].querySelector('.stat-label').textContent='実施セット';
-      stats[0].querySelector('.stat-value').textContent=`${attempted} / ${n}`;
+      setText(stats[0].querySelector('.stat-label'),'実施セット');
+      setText(stats[0].querySelector('.stat-value'),`${attempted} / ${n}`);
     }
-    if(stats[2])stats[2].querySelector('.stat-label').textContent='満点セット';
+    if(stats[2])setText(stats[2].querySelector('.stat-label'),'満点セット');
   }
   function fixExamCards(){
     const store=readStore();
     for(const id of examIds){
       const s=section(id),card=document.querySelector(`[data-section="${id}"]`); if(!s||!card)continue;
       const pills=card.querySelectorAll('.card-meta .pill');
-      if(pills[0])pills[0].textContent=`${s.display_count}問`;
-      if(pills[1])pills[1].textContent=`本番時間 ${s.recommended_time}`;
-      if(pills[2]){pills[2].textContent='本番想定';pills[2].classList.add('exam-pill');}
-      const map=card.querySelector('.section-map'); if(map)map.textContent=s.exam_subject==='A'?'90分・60問｜科目A 全分野':'100分・20問｜科目B 全分野';
+      if(pills[0])setText(pills[0],`${s.display_count}問`);
+      if(pills[1])setText(pills[1],`本番時間 ${s.recommended_time}`);
+      if(pills[2]){setText(pills[2],'本番想定');pills[2].classList.add('exam-pill');}
+      const map=card.querySelector('.section-map'); if(map)setText(map,s.exam_subject==='A'?'90分・60問｜科目A 全分野':'100分・20問｜科目B 全分野');
       const best=store.best?.[id];
       const status=card.querySelector('.status-pill');
       if(status&&best){
-        status.textContent=best.score===best.total?'満点':'実施済み';
+        setText(status,best.score===best.total?'満点':'実施済み');
         status.classList.toggle('status-done',best.score===best.total);
         status.classList.toggle('status-started',best.score!==best.total);
       }
       const result=card.querySelector('.card-result');
-      if(result&&best)result.innerHTML=`<span>ベスト <b>${best.score}/${best.total}</b></span><span>時間 <b>${Math.floor(best.elapsed/60)}:${String(best.elapsed%60).padStart(2,'0')}</b></span>`;
+      if(result&&best){
+        const html=`<span>ベスト <b>${best.score}/${best.total}</b></span><span>時間 <b>${Math.floor(best.elapsed/60)}:${String(best.elapsed%60).padStart(2,'0')}</b></span>`;
+        if(result.innerHTML!==html)result.innerHTML=html;
+      }
     }
   }
   function addExamNotice(){
     const title=document.getElementById('quizTitle')?.textContent||'';
     const isExam=title.includes('科目A総合')||title.includes('科目B総合');
-    if(!isExam)return;
+    const old=document.getElementById('examNotice');
+    if(!isExam){old?.remove();return;}
     const header=document.querySelector('#quizView .quiz-header');
-    if(header&&!document.getElementById('examNotice')){
+    if(header&&!old){
       const n=document.createElement('div');n.id='examNotice';n.className='exam-note';
       n.textContent='本番想定モード：採点するまで正解は表示しません。本試験はIRTに基づく評価点方式のため、このアプリの正答数・正答率は学習用の参考値です。';
       header.insertAdjacentElement('afterend',n);
@@ -93,8 +105,9 @@
     const title=document.getElementById('resultTitle')?.textContent||'';
     const isExam=/^[JK] /.test(title.trim());
     const hero=document.querySelector('#resultView .result-hero');
-    document.getElementById('examResultNotice')?.remove();
-    if(isExam&&hero){
+    const old=document.getElementById('examResultNotice');
+    if(!isExam){old?.remove();return;}
+    if(hero&&!old){
       const n=document.createElement('div');n.id='examResultNotice';n.className='exam-note';
       n.textContent='この結果は正答数・正答率による学習用の参考値です。本試験の600/1000という評価点を直接換算したものではありません。誤答分野を確認し、分野別演習へ戻って復習してください。';
       hero.insertAdjacentElement('afterend',n);
@@ -106,11 +119,34 @@
       card.dataset.examRich='1';
       const text=card.querySelector('.q-text');if(!text)return;
       const row=document.createElement('div');row.className='exam-source';row.innerHTML=`<span>${esc(q.source_label||'科目B 本番想定')}</span>`;text.insertAdjacentElement('afterend',row);
-      if(q.media){const wrap=document.createElement('div');wrap.className='exam-media';const img=document.createElement('img');img.alt='擬似コード・図表';img.src=dataUri(mediaSvg(q.media));const cap=document.createElement('div');cap.className='exam-media-cap';cap.textContent='本番を想定し、擬似コード・図表の必要な部分だけを追ってください。';wrap.append(img,cap);row.insertAdjacentElement('afterend',wrap);}
+      if(q.media){
+        const wrap=document.createElement('div');wrap.className='exam-media';
+        const img=document.createElement('img');img.alt='擬似コード・図表';img.loading='lazy';img.decoding='async';img.src=dataUriFor(q.media);
+        const cap=document.createElement('div');cap.className='exam-media-cap';cap.textContent='本番を想定し、擬似コード・図表の必要な部分だけを追ってください。';
+        wrap.append(img,cap);row.insertAdjacentElement('afterend',wrap);
+      }
     });
   }
   function cleanNotice(){if(!document.querySelector('#quizView:not(.hidden)'))document.getElementById('examNotice')?.remove();}
-  function refresh(){fixStats();fixExamCards();addExamNotice();addResultNotice();enrichK();cleanNotice();}
-  const obs=new MutationObserver(refresh);obs.observe(document.body,{childList:true,subtree:true});
+
+  let refreshing=false;
+  let scheduled=false;
+  function refresh(){
+    if(refreshing)return;
+    refreshing=true;
+    try{fixStats();fixExamCards();addExamNotice();addResultNotice();enrichK();cleanNotice();}
+    finally{refreshing=false;}
+  }
+  function scheduleRefresh(){
+    if(scheduled)return;
+    scheduled=true;
+    requestAnimationFrame(()=>{scheduled=false;refresh();});
+  }
+  const obs=new MutationObserver(mutations=>{
+    if(refreshing)return;
+    const relevant=mutations.some(m=>m.addedNodes.length||m.removedNodes.length);
+    if(relevant)scheduleRefresh();
+  });
+  obs.observe(document.body,{childList:true,subtree:true});
   refresh();
 })();
